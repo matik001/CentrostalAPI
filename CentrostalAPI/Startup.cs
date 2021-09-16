@@ -31,21 +31,20 @@ namespace CentrostalAPI {
             JwtHelper.loadConfig(Configuration);
 
             services.AddDbContext<ApplicationDbContext>(options => {
-                var loggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
-                options.UseLoggerFactory(loggerFactory)
-                    .EnableSensitiveDataLogging()
-                    .UseSqlServer(Configuration.GetConnectionString("sqlConnection"));
+                //var loggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
+                //options.UseLoggerFactory(loggerFactory)
+                //    .EnableSensitiveDataLogging()
+                //    .UseSqlServer(Configuration.GetConnectionString("sqlConnection"));
 
-                //options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"));
             });
             services.configureCors();
 
             services.AddAutoMapper(typeof(MapperInitializer));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IItemsTemplateService, ItemsTemplateService>();
+            services.AddScoped<IItemsService, ItemsService>();
             services.AddScoped<IOrdersService, OrdersService>();
-            //services.AddScoped<IQuizService, QuizService>();
 
             services.configureAuthentication();
 
@@ -56,14 +55,14 @@ namespace CentrostalAPI {
 
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger) {
             if(env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CentrostalAPI v1"));
             }
 
-            //app.configureExceptionHandler(logger);
+            app.configureExceptionHandler(logger);
             app.UseHttpsRedirection();
 
             app.UseCors("AllowAll");

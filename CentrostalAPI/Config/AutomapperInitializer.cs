@@ -22,21 +22,13 @@ namespace CentrostalAPI.Config {
             CreateMap<User, UserPublicInfoDTO>().ReverseMap();
 
 
-            CreateMap<ItemTemplate, ItemTemplateResponseDTO>()
-                 .ForMember(a => a.currents,
-                    s => s.MapFrom(x =>
-                        x.currents.Select(a => a.current)))
-                 .ForMember(a => a.steelTypes,
-                    s => s.MapFrom(x =>
-                        x.steelTypes.Select(a => a.steelType.typeName)));
-
             CreateMap<Item, ItemDTO>()
                 .ForMember(a => a.steelType,
-                    s => s.MapFrom(x => x.steelType.typeName))
-                .ForMember(a => a.number,
-                    s => s.MapFrom(x => x.itemTemplate.number))
-                .ForMember(a => a.name,
-                    s => s.MapFrom(x => x.itemTemplate.name));
+                    s => s.MapFrom(x => x.steelType.typeName));
+            CreateMap<CreateItemDTO, Item>()
+                .ForMember(a => a.steelType, b => b.Ignore());
+            CreateMap<UpdateItemDTO, Item>()
+                .ForMember(a => a.steelType, b => b.Ignore());
 
 
 

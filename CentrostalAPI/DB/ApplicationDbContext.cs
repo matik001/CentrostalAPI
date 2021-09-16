@@ -11,9 +11,6 @@ using Microsoft.EntityFrameworkCore;
 namespace CentrostalAPI.DB {
     public class ApplicationDbContext : DbContext {
         public DbSet<Item> items { get; set; }
-        public DbSet<ItemTemplate> itemTemplates { get; set; }
-        public DbSet<ItemTemplateCurrent> itemTemplateCurrents { get; set; }
-        public DbSet<ItemTemplateSteelType> itemTemplateSteelTypes { get; set; }
         public DbSet<Order> orders { get; set; }
         public DbSet<OrderItem> orderItems { get; set; }
         public DbSet<Status> statuses { get; set; }
@@ -40,7 +37,6 @@ namespace CentrostalAPI.DB {
                     .Property(a => a.createdDate)
                     .HasConversion(v => v,
                         v => new DateTime(v.Ticks, DateTimeKind.Utc));
-
             /////
             ///// relations
             /////
@@ -50,21 +46,6 @@ namespace CentrostalAPI.DB {
                 .WithOne(orderItem => orderItem.item)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<ItemTemplate>()
-                .HasMany(itemTemplate => itemTemplate.steelTypes)
-                .WithOne(steelType => steelType.itemTemplate)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<ItemTemplate>()
-                .HasMany(itemTemplate => itemTemplate.items)
-                .WithOne(item => item.itemTemplate)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<ItemTemplate>()
-                .HasMany(itemTemplate => itemTemplate.currents)
-                .WithOne(current => current.itemTemplate)
-                .OnDelete(DeleteBehavior.Cascade);
-
             modelBuilder.Entity<Order>()
                 .HasMany(order => order.orderItems)
                 .WithOne(orderItem => orderItem.order)
@@ -73,11 +54,6 @@ namespace CentrostalAPI.DB {
             modelBuilder.Entity<Status>()
                 .HasMany(status => status.orders)
                 .WithOne(order => order.status)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<SteelType>()
-                .HasMany(steelType => steelType.itemTemplateSteelTypes)
-                .WithOne(itemTemplateSteelType => itemTemplateSteelType.steelType)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<SteelType>()
@@ -92,6 +68,7 @@ namespace CentrostalAPI.DB {
 
             StatusRepository.seed(modelBuilder.Entity<Status>());
             SteelTypeRepository.seed(modelBuilder.Entity<SteelType>());
+            ItemsRepository.seed(modelBuilder.Entity<Item>());
         }
     }
 }

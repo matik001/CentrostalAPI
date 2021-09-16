@@ -20,9 +20,9 @@ namespace CentrostalAPI.DB.Repositories {
             );
         }
     }
-    public static class StatusId {
-        public static readonly int created = 1;
-        public static readonly int executed = 2;
-        public static readonly int canceled = 3;
+    public enum Statuses {
+        created = 1,
+        executed = 2,
+        canceled = 3
     }
 }

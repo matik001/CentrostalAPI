@@ -12,6 +12,13 @@ namespace CentrostalAPI.DB.Repositories {
         public SteelTypeRepository(ApplicationDbContext context) : base(context) {
         }
 
+        public enum SteelTypesEnum {
+            stalMiekka = 1,
+            stalMiekkaBavel = 2,
+            stalNierdzewna = 3,
+            stalNierdzewnaBavel = 4,
+            aluminium = 5
+        }
         public static void seed(EntityTypeBuilder<SteelType> builder) {
             builder.HasData(
                 new SteelType() { id = 1, typeName = "Stal miękka" },

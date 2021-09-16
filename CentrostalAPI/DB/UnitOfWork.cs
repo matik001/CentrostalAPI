@@ -8,10 +8,7 @@ using CentrostalAPI.DB.Repositories;
 
 namespace CentrostalAPI.DB {
     public class UnitOfWork : IUnitOfWork {
-        public IItemRepository items { get; }
-        public IItemTemplateRepository itemTemplates { get; }
-        public IItemTemplateCurrentRepository itemTemplateCurrents { get; }
-        public IItemTemplateSteelTypeRepository itemTemplateSteelTypes { get; }
+        public IItemsRepository items { get; }
         public IOrderRepository orders { get; }
         public IOrderItemRepository orderItems { get; }
         public IStatusRepository statuses { get; }
@@ -22,10 +19,7 @@ namespace CentrostalAPI.DB {
         private readonly ApplicationDbContext _context;
         public UnitOfWork(ApplicationDbContext context) {
             _context = context;
-            items = new ItemRepository(context);
-            itemTemplates = new ItemTemplateRepository(context);
-            itemTemplateCurrents = new ItemTemplateCurrentRepository(context);
-            itemTemplateSteelTypes = new ItemTemplateSteelTypeRepository(context);
+            items = new ItemsRepository(context);
             orders = new OrderRepository(context);
             statuses = new StatusRepository(context);
             steelTypes = new SteelTypeRepository(context);

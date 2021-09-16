@@ -28,6 +28,7 @@ namespace CentrostalAPI.Config {
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = JwtHelper.issuer,
                         ValidAudience = JwtHelper.audience,
+                        ClockSkew = TimeSpan.Zero,
                         IssuerSigningKey = new SymmetricSecurityKey(
                              Encoding.UTF8.GetBytes(JwtHelper.secret))
                     };

@@ -9,10 +9,8 @@ using CentrostalAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CentrostalAPI.IServices {
-    public interface IItemsTemplateService {
-        /// return id
-        public Task create(ItemTemplateRequestDTO dto);
-        public Task update(int id, ItemTemplateRequestDTO dto);
-        public Task delete(int id);
+    public interface IItemsService {
+        Task create(CreateItemDTO createdItem);
+        Task update(int id, UpdateItemDTO itemDto);
     }
 }

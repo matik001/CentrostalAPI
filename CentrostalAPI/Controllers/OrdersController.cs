@@ -30,6 +30,7 @@ namespace CentrostalAPI.Controllers {
             _ordersService = ordersService;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> getAll() {
             var orders = (await _unitOfWork.orders.all(
@@ -37,9 +38,9 @@ namespace CentrostalAPI.Controllers {
                                     "status",
                                     "orderItems",
                                     "orderItems.item",
-                                    "orderItems.item.itemTemplate",
                                     "orderItems.item.steelType",
-                }));
+                },
+                orderBy: (query) => query.OrderByDescending(a => a.lastEditedDate)));
             var res = _mapper.Map<List<OrderDTO>>(orders);
             return Ok(res);
         }
@@ -68,6 +69,21 @@ namespace CentrostalAPI.Controllers {
             return NoContent();
         }
 
+        [Authorize]
+        [HttpPatch("{id:int}/finish")]
+        public async Task<IActionResult> finish([FromRoute] int id) {
+            await _ordersService.markStatus(id, DB.Repositories.Statuses.executed);
+            await _unitOfWork.saveAsync();
+            return NoContent();
+        }
+
+        [Authorize]
+        [HttpPatch("{id:int}/cancel")]
+        public async Task<IActionResult> cancel([FromRoute] int id) {
+            await _ordersService.markStatus(id, DB.Repositories.Statuses.canceled);
+            await _unitOfWork.saveAsync();
+            return NoContent();
+        }
         //[Authorize(policy: AuthorizationPolicies.AdminOnly)]
         //[HttpDelete("{id:int}")]
         //public async Task<IActionResult> delete([FromRoute] int id) {

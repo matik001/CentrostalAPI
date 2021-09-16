@@ -7,10 +7,7 @@ using CentrostalAPI.DB.IRepositories;
 
 namespace CentrostalAPI.DB {
     public interface IUnitOfWork : IDisposable {
-        IItemRepository items { get; }
-        IItemTemplateRepository itemTemplates { get; }
-        IItemTemplateCurrentRepository itemTemplateCurrents { get; }
-        IItemTemplateSteelTypeRepository itemTemplateSteelTypes { get; }
+        IItemsRepository items { get; }
         IOrderRepository orders { get; }
         IOrderItemRepository orderItems { get; }
         IStatusRepository statuses { get; }

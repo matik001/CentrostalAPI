@@ -27,8 +27,9 @@ namespace CentrostalAPI.IServices {
             }).ToList();
             var newOrder = new Order() {
                 createdDate = DateTime.UtcNow,
+                lastEditedDate = DateTime.UtcNow,
                 orderingUserId = userId,
-                statusId = StatusId.created,
+                statusId = (int)Statuses.created,
                 orderItems = orderItems
             };
             await _unitOfWork.orders.add(newOrder);
@@ -43,6 +44,19 @@ namespace CentrostalAPI.IServices {
             }, attach: true);
             order.lastEditedDate = DateTime.UtcNow;
             order.orderItems = orderItems;
+        }
+        public async Task markStatus(int id, Statuses status) {
+            var order = await _unitOfWork.orders.getById(id, includes: new[]{
+                "orderItems",
+                "orderItems.item"
+            }, attach: true);
+            if(status == Statuses.canceled || status == Statuses.executed)
+                order.executedDate = DateTime.UtcNow;
+            order.lastEditedDate = DateTime.UtcNow;
+
+            _unitOfWork.items.changeAmountFromOrder(order);
+
+            order.statusId = (int)status;
         }
 
     }

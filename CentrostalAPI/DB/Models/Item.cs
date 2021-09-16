@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace CentrostalAPI.DB.Models {
     public class Item : IHavingId {
         public int id { get; set; }
-        public int itemTemplateId { get; set; }
-        public ItemTemplate itemTemplate { get; set; }
+        public string name { get; set; }
+        public int number { get; set; }
         public int amount { get; set; }
         public int current { get; set; }
         public bool isOriginal { get; set; }

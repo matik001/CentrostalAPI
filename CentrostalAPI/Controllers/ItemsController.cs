@@ -19,15 +19,18 @@ namespace CentrostalAPI.Controllers {
     [Route("item")]
     public class ItemsController : ControllerBase {
         private readonly IUserService _userService;
+        private readonly IItemsService itemsService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public ItemsController(IUserService userService, IUnitOfWork unitOfWork, IMapper mapper) {
+        public ItemsController(IUserService userService, IUnitOfWork unitOfWork, IMapper mapper, IItemsService itemsService) {
             _userService = userService;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            this.itemsService = itemsService;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> getAll([FromQuery] string pattern = null,
                                                 [FromQuery] string steelType = null,
@@ -36,40 +39,43 @@ namespace CentrostalAPI.Controllers {
                                                 [FromQuery] bool? isOriginal = null) {
 
             var items = (await _unitOfWork.items.all(
-                a => (pattern == null || a.itemTemplate.name.ToLower().Contains(pattern.ToLower())) &&
+                a => (pattern == null || a.name.ToLower().Contains(pattern.ToLower())) &&
                     (steelType == null || a.steelType.typeName.ToLower() == steelType.ToLower()) &&
-                    (number == null || a.itemTemplate.number == number) &&
+                    (number == null || a.number == number) &&
                     (current == null || a.current == current) &&
                     (isOriginal == null || a.isOriginal == isOriginal)
                 ,
-                includes: new[] { "itemTemplate", "steelType" },
-                orderBy: (query) => query.OrderByDescending(x => x.amount)));
+                includes: new[] { "steelType" },
+                orderBy: (query) => query.OrderBy(x => x.amount)));
             var res = _mapper.Map<List<ItemDTO>>(items);
             return Ok(res);
         }
 
-        //[HttpGet("{id:int}")]
-        //public async Task<IActionResult> get([FromRoute] int id) {
-        //    var itemTemplate = await _unitOfWork.itemTemplates.getById(id, includes: new[] { "currents", "steelTypes", "steelTypes.steelType" });
-        //    var res = _mapper.Map<ItemTemplateResponseDTO>(itemTemplate);
-        //    return Ok(res);
-        //}
+        [Authorize]
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> get([FromRoute] int id) {
+            var item = await _unitOfWork.items.getById(id,
+                includes: new[] { "steelType" });
+            var res = _mapper.Map<ItemDTO>(item);
+            return Ok(res);
+        }
 
-        //[Authorize(policy: AuthorizationPolicies.AdminOnly)]
-        //[HttpPost]
-        //public async Task<IActionResult> create([FromBody] ItemTemplateRequestDTO createdItem) {
-        //    await _itemTemplateService.create(_unitOfWork, createdItem);
-        //    await _unitOfWork.saveAsync();
-        //    return NoContent();
-        //}
+        [Authorize(policy: AuthorizationPolicies.AdminOnly)]
+        [HttpPost]
+        public async Task<IActionResult> create([FromBody] CreateItemDTO createdItem) {
+            await itemsService.create(createdItem);
+            await _unitOfWork.saveAsync();
+            return Ok();
+        }
 
-        //[Authorize(policy: AuthorizationPolicies.AdminOnly)]
-        //[HttpPut("{id:int}")]
-        //public async Task<IActionResult> update([FromRoute] int id, [FromBody] ItemTemplateRequestDTO updateItem) {
-        //    await _itemTemplateService.update(_unitOfWork, id, updateItem);
-        //    await _unitOfWork.saveAsync();
-        //    return NoContent();
-        //}
+        [Authorize(policy: AuthorizationPolicies.AdminOnly)]
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> update([FromRoute] int id, [FromBody] UpdateItemDTO item) {
+            await itemsService.update(id, item);
+            await _unitOfWork.saveAsync();
+            return NoContent();
+        }
+
 
         //[Authorize(policy: AuthorizationPolicies.AdminOnly)]
         //[HttpDelete("{id:int}")]

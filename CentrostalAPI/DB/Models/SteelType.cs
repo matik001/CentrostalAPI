@@ -9,6 +9,5 @@ namespace CentrostalAPI.DB.Models {
         public int id { get; set; }
         public string typeName { get; set; }
         public ICollection<Item> items { get; set; }
-        public ICollection<ItemTemplateSteelType> itemTemplateSteelTypes { get; set; }
     }
 }
