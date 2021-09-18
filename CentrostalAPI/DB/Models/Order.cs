@@ -13,6 +13,7 @@ namespace CentrostalAPI.DB.Models {
         public DateTime? executedDate { get; set; }
         public int statusId { get; set; }
         public Status status { get; set; }
+        public bool isSupply { get; set; }
         public int orderingUserId { get; set; }
         public User orderingUser { get; set; }
         public ICollection<OrderItem> orderItems { get; set; }

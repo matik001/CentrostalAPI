@@ -15,9 +15,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace CentrostalAPI.IServices {
     public class OrdersService : IOrdersService {
         IUnitOfWork _unitOfWork { get; set; }
+        IMapper _mapper { get; set; }
 
-        public OrdersService(IUnitOfWork unitOfWork) {
+        public OrdersService(IUnitOfWork unitOfWork, IMapper mapper) {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         public async Task create(int userId, CreateOrderDTO dto) {
@@ -30,7 +32,8 @@ namespace CentrostalAPI.IServices {
                 lastEditedDate = DateTime.UtcNow,
                 orderingUserId = userId,
                 statusId = (int)Statuses.created,
-                orderItems = orderItems
+                orderItems = orderItems,
+                isSupply = dto.isSupply
             };
             await _unitOfWork.orders.add(newOrder);
         }
@@ -42,21 +45,29 @@ namespace CentrostalAPI.IServices {
             var order = await _unitOfWork.orders.getById(id, includes: new[] {
                 "orderItems"
             }, attach: true);
+            order.isSupply = dto.isSupply;
             order.lastEditedDate = DateTime.UtcNow;
             order.orderItems = orderItems;
         }
-        public async Task markStatus(int id, Statuses status) {
+        public async Task finishOrder(int id) {
             var order = await _unitOfWork.orders.getById(id, includes: new[]{
                 "orderItems",
                 "orderItems.item"
             }, attach: true);
-            if(status == Statuses.canceled || status == Statuses.executed)
-                order.executedDate = DateTime.UtcNow;
+            order.executedDate = DateTime.UtcNow;
+            order.lastEditedDate = DateTime.UtcNow;
+
+
+            _unitOfWork.items.changeAmountFromOrder(order);
+            order.statusId = (int)(order.isSupply ? Statuses.received : Statuses.executed);
+        }
+        public async Task cancelOrder(int id) {
+            var order = await _unitOfWork.orders.getById(id, attach: true);
+            order.executedDate = DateTime.UtcNow;
             order.lastEditedDate = DateTime.UtcNow;
 
             _unitOfWork.items.changeAmountFromOrder(order);
-
-            order.statusId = (int)status;
+            order.statusId = (int)(Statuses.canceled);
         }
 
     }

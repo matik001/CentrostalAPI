@@ -12,6 +12,7 @@ namespace CentrostalAPI.DTOs {
         public DateTime? executedDate { get; set; }
         public string status { get; set; }
         public string orderingPerson { get; set; }
+        public bool isSupply { get; set; }
         public ICollection<OrderItemDTO> orderItems { get; set; }
     }
     public class OrderItemDTO {
@@ -24,6 +25,7 @@ namespace CentrostalAPI.DTOs {
         public int itemId { get; set; }
     }
     public class CreateOrderDTO {
+        public bool isSupply { get; set; }
         public ICollection<CreateOrderItemDTO> orderItems { get; set; }
     }
     public class UpdateOrderDTO : CreateOrderDTO { }

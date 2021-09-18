@@ -32,8 +32,9 @@ namespace CentrostalAPI.Controllers {
 
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> getAll() {
+        public async Task<IActionResult> getAll([FromQuery] bool? isSupply = null) {
             var orders = (await _unitOfWork.orders.all(
+                a => isSupply == null || a.isSupply == isSupply,
                 includes: new[] {   "orderingUser",
                                     "status",
                                     "orderItems",
@@ -72,7 +73,7 @@ namespace CentrostalAPI.Controllers {
         [Authorize]
         [HttpPatch("{id:int}/finish")]
         public async Task<IActionResult> finish([FromRoute] int id) {
-            await _ordersService.markStatus(id, DB.Repositories.Statuses.executed);
+            await _ordersService.finishOrder(id);
             await _unitOfWork.saveAsync();
             return NoContent();
         }
@@ -80,7 +81,7 @@ namespace CentrostalAPI.Controllers {
         [Authorize]
         [HttpPatch("{id:int}/cancel")]
         public async Task<IActionResult> cancel([FromRoute] int id) {
-            await _ordersService.markStatus(id, DB.Repositories.Statuses.canceled);
+            await _ordersService.cancelOrder(id);
             await _unitOfWork.saveAsync();
             return NoContent();
         }

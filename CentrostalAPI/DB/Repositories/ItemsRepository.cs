@@ -16,7 +16,10 @@ namespace CentrostalAPI.DB.Repositories {
         /// assume order includes  orderItems.item
         public void changeAmountFromOrder(Order order) {
             foreach(var orderItem in order.orderItems) {
-                orderItem.item.amount += orderItem.amountDelta;
+                if(order.isSupply)
+                    orderItem.item.amount += orderItem.amountDelta;
+                else
+                    orderItem.item.amount -= orderItem.amountDelta;
             }
         }
 

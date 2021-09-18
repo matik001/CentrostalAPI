@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -52,6 +53,14 @@ namespace CentrostalAPI.Config {
                     });
             });
         }
+
+        public static void configureNginx(this IApplicationBuilder app) {
+            app.UseForwardedHeaders(new ForwardedHeadersOptions {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+        }
+
+
         public static void configureExceptionHandler(this IApplicationBuilder app, ILogger logger) {
             app.UseExceptionHandler(appError => {
                 appError.Run(async context => {

@@ -87,6 +87,7 @@ namespace CentrostalAPI.Migrations
                     lastEditedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     executedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     statusId = table.Column<int>(type: "int", nullable: false),
+                    isDelivery = table.Column<bool>(type: "bit", nullable: false),
                     orderingUserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -140,7 +141,8 @@ namespace CentrostalAPI.Migrations
                 {
                     { 1, "zlecone" },
                     { 2, "zrealizowane" },
-                    { 3, "anulowane" }
+                    { 3, "anulowane" },
+                    { 4, "wydane" }
                 });
 
             migrationBuilder.InsertData(

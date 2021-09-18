@@ -14,6 +14,7 @@ namespace CentrostalAPI.IServices {
         /// return id
         public Task create(int userId, CreateOrderDTO dto);
         public Task update(int id, UpdateOrderDTO dto);
-        public Task markStatus(int id, Statuses status);
+        public Task cancelOrder(int id);
+        public Task finishOrder(int id);
     }
 }

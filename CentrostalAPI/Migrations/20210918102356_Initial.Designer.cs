@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CentrostalAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210914094917_Initial")]
+    [Migration("20210918102356_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -3808,6 +3808,9 @@ namespace CentrostalAPI.Migrations
                     b.Property<DateTime?>("executedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("isDelivery")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("lastEditedDate")
                         .HasColumnType("datetime2");
 
@@ -3880,6 +3883,11 @@ namespace CentrostalAPI.Migrations
                         {
                             id = 3,
                             name = "anulowane"
+                        },
+                        new
+                        {
+                            id = 4,
+                            name = "wydane"
                         });
                 });
 

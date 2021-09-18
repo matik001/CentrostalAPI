@@ -16,13 +16,15 @@ namespace CentrostalAPI.DB.Repositories {
             builder.HasData(
                 new Status() { id = 1, name = "zlecone" },
                 new Status() { id = 2, name = "zrealizowane" },
-                new Status() { id = 3, name = "anulowane" }
+                new Status() { id = 3, name = "anulowane" },
+                new Status() { id = 4, name = "odebrane" }
             );
         }
     }
     public enum Statuses {
         created = 1,
         executed = 2,
-        canceled = 3
+        canceled = 3,
+        received = 4
     }
 }

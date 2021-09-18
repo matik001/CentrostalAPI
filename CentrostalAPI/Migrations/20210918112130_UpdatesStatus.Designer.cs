@@ -4,14 +4,16 @@ using CentrostalAPI.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CentrostalAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210918112130_UpdatesStatus")]
+    partial class UpdatesStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3806,7 +3808,7 @@ namespace CentrostalAPI.Migrations
                     b.Property<DateTime?>("executedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("isSupply")
+                    b.Property<bool>("isDelivery")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("lastEditedDate")

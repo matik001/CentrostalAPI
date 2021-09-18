@@ -31,12 +31,13 @@ namespace CentrostalAPI {
             JwtHelper.loadConfig(Configuration);
 
             services.AddDbContext<ApplicationDbContext>(options => {
+                var sqlconnection = Configuration.GetConnectionString("sqlConnection");
                 //var loggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
                 //options.UseLoggerFactory(loggerFactory)
                 //    .EnableSensitiveDataLogging()
-                //    .UseSqlServer(Configuration.GetConnectionString("sqlConnection"));
+                //    .UseSqlServer(sqlconnection);
 
-                options.UseSqlServer(Configuration.GetConnectionString("sqlConnection"));
+                options.UseSqlServer(sqlconnection);
             });
             services.configureCors();
 
