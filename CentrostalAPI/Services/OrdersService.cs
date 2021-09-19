@@ -62,7 +62,10 @@ namespace CentrostalAPI.IServices {
             order.statusId = (int)(order.isSupply ? Statuses.received : Statuses.executed);
         }
         public async Task cancelOrder(int id) {
-            var order = await _unitOfWork.orders.getById(id, attach: true);
+            var order = await _unitOfWork.orders.getById(id, includes: new[]{
+                "orderItems",
+                "orderItems.item"
+            }, attach: true);
             order.executedDate = DateTime.UtcNow;
             order.lastEditedDate = DateTime.UtcNow;
 

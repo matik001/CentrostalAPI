@@ -67,6 +67,8 @@ namespace CentrostalAPI.Config {
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
                     if(contextFeature != null) {
                         var error = contextFeature.Error;
+                        logger.LogError(error.ToString());
+
                         if(error is not HttpError) {
                             error = new HttpError(500);
                         }
