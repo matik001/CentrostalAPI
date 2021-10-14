@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using CentrostalAPI.DB;
 using CentrostalAPI.DB.Repositories;
 using CentrostalAPI.DTOs;
-using CentrostalAPI.Models;
+using CentrostalAPI.DB.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CentrostalAPI.IServices {
     public interface IOrdersService {
         /// return id
         public Task create(int userId, CreateOrderDTO dto);
-        public Task update(int id, UpdateOrderDTO dto);
-        public Task cancelOrder(int id);
-        public Task finishOrder(int id);
+        public Task update(User user, int id, UpdateOrderDTO dto);
+        public Task cancelOrder(User user, int id);
+        public Task changeToNextStatus(User user, int id);
     }
 }

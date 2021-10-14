@@ -7,8 +7,8 @@ using CentrostalAPI.DB.IRepositories;
 using CentrostalAPI.DB.Models;
 
 namespace CentrostalAPI.DB.Repositories {
-    public class UserRepository : GenericRepository<User>, IUserRepository {
-        public UserRepository(ApplicationDbContext context) : base(context) {
+    public class UserRoleRepository : GenericRepository<UserRole>, IUserRoleRepository {
+        public UserRoleRepository(ApplicationDbContext context) : base(context) {
         }
     }
 }

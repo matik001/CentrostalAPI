@@ -12,6 +12,7 @@ namespace CentrostalAPI.DB.Models {
         public int amount { get; set; }
         public int current { get; set; }
         public bool isOriginal { get; set; }
+        public int minStock { get; set; }
         public int steelTypeId { get; set; }
         public SteelType steelType { get; set; }
         public ICollection<OrderItem> orderItems { get; set; }

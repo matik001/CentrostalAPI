@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CentrostalAPI.DTOs;
-using CentrostalAPI.Models;
+using CentrostalAPI.DB.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CentrostalAPI.IServices {

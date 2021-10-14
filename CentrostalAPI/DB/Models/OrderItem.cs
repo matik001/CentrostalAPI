@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CentrostalAPI.Models;
+using CentrostalAPI.DB.Models;
 
 namespace CentrostalAPI.DB.Models {
     public class OrderItem : IHavingId {
@@ -13,6 +13,7 @@ namespace CentrostalAPI.DB.Models {
         public int amountDelta { get; set; }
         public int orderId { get; set; }
         public Order order { get; set; }
+        public decimal priceOne { get; set; }
 
     }
 }

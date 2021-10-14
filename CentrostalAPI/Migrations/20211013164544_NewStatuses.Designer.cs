@@ -4,14 +4,16 @@ using CentrostalAPI.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CentrostalAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211013164544_NewStatuses")]
+    partial class NewStatuses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4271,47 +4273,8 @@ namespace CentrostalAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("canAdminCancel")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canAdminChangeStatus")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canAdminEdit")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canAnyoneCancel")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canAnyoneChangeStatus")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canAnyoneEdit")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canChairmanCancel")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canChairmanChangeStatus")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("canChairmanEdit")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("color")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("nextStatusId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nextStatusMsg")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("shouldUpdateAmount")
-                        .HasColumnType("bit");
 
                     b.HasKey("id");
 
@@ -4321,176 +4284,47 @@ namespace CentrostalAPI.Migrations
                         new
                         {
                             id = 1,
-                            canAdminCancel = true,
-                            canAdminChangeStatus = true,
-                            canAdminEdit = true,
-                            canAnyoneCancel = true,
-                            canAnyoneChangeStatus = true,
-                            canAnyoneEdit = true,
-                            canChairmanCancel = true,
-                            canChairmanChangeStatus = true,
-                            canChairmanEdit = true,
-                            color = "#999966",
-                            name = "edytowalne",
-                            nextStatusId = 2,
-                            nextStatusMsg = "Przekaż dalej",
-                            shouldUpdateAmount = false
-                        },
-                        new
-                        {
-                            id = 2,
-                            canAdminCancel = true,
-                            canAdminChangeStatus = true,
-                            canAdminEdit = true,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = false,
-                            canChairmanChangeStatus = false,
-                            canChairmanEdit = false,
-                            color = "#99cc00",
-                            name = "utworzone",
-                            nextStatusId = 3,
-                            nextStatusMsg = "Oznacz jako zapytane",
-                            shouldUpdateAmount = false
-                        },
-                        new
-                        {
-                            id = 3,
-                            canAdminCancel = true,
-                            canAdminChangeStatus = true,
-                            canAdminEdit = true,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = false,
-                            canChairmanChangeStatus = false,
-                            canChairmanEdit = false,
-                            color = "#cc66ff",
-                            name = "zapytane",
-                            nextStatusId = 4,
-                            nextStatusMsg = "Przekaż do zatwierdzenia",
-                            shouldUpdateAmount = false
-                        },
-                        new
-                        {
-                            id = 4,
-                            canAdminCancel = true,
-                            canAdminChangeStatus = false,
-                            canAdminEdit = true,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = true,
-                            canChairmanChangeStatus = true,
-                            canChairmanEdit = true,
-                            color = "#ff6600",
-                            name = "niezatwierdzone",
-                            nextStatusId = 5,
-                            nextStatusMsg = "Zatwierdź",
-                            shouldUpdateAmount = false
+                            name = "edytowalne"
                         },
                         new
                         {
                             id = 5,
-                            canAdminCancel = true,
-                            canAdminChangeStatus = true,
-                            canAdminEdit = true,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = false,
-                            canChairmanChangeStatus = false,
-                            canChairmanEdit = false,
-                            color = "#33cc33",
-                            name = "zatwierdzone",
-                            nextStatusId = 6,
-                            nextStatusMsg = "Oznacz jako zamówione",
-                            shouldUpdateAmount = false
+                            name = "utworzone"
                         },
                         new
                         {
                             id = 6,
-                            canAdminCancel = true,
-                            canAdminChangeStatus = true,
-                            canAdminEdit = true,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = false,
-                            canChairmanChangeStatus = false,
-                            canChairmanEdit = false,
-                            color = "#0066cc",
-                            name = "zamówione",
-                            nextStatusId = 7,
-                            nextStatusMsg = "Przyjmuję towar",
-                            shouldUpdateAmount = false
+                            name = "zapytane"
                         },
                         new
                         {
                             id = 7,
-                            canAdminCancel = false,
-                            canAdminChangeStatus = false,
-                            canAdminEdit = false,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = false,
-                            canChairmanChangeStatus = false,
-                            canChairmanEdit = false,
-                            color = "#009933",
-                            name = "zrealizowane",
-                            shouldUpdateAmount = true
+                            name = "nie zatwierdzone"
                         },
                         new
                         {
                             id = 8,
-                            canAdminCancel = false,
-                            canAdminChangeStatus = false,
-                            canAdminEdit = false,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = false,
-                            canChairmanChangeStatus = false,
-                            canChairmanEdit = false,
-                            color = "#cc0000",
-                            name = "anulowane",
-                            shouldUpdateAmount = false
+                            name = "zatwierdzone"
                         },
                         new
                         {
                             id = 9,
-                            canAdminCancel = true,
-                            canAdminChangeStatus = true,
-                            canAdminEdit = true,
-                            canAnyoneCancel = true,
-                            canAnyoneChangeStatus = true,
-                            canAnyoneEdit = true,
-                            canChairmanCancel = true,
-                            canChairmanChangeStatus = true,
-                            canChairmanEdit = true,
-                            color = "#999966",
-                            name = "edytowalne",
-                            nextStatusId = 10,
-                            nextStatusMsg = "Wydaj",
-                            shouldUpdateAmount = false
+                            name = "zamówione"
                         },
                         new
                         {
-                            id = 10,
-                            canAdminCancel = false,
-                            canAdminChangeStatus = false,
-                            canAdminEdit = false,
-                            canAnyoneCancel = false,
-                            canAnyoneChangeStatus = false,
-                            canAnyoneEdit = false,
-                            canChairmanCancel = false,
-                            canChairmanChangeStatus = false,
-                            canChairmanEdit = false,
-                            color = "#009933",
-                            name = "wydane",
-                            shouldUpdateAmount = true
+                            id = 4,
+                            name = "zrealizowane"
+                        },
+                        new
+                        {
+                            id = 2,
+                            name = "wydane"
+                        },
+                        new
+                        {
+                            id = 3,
+                            name = "anulowane"
                         });
                 });
 

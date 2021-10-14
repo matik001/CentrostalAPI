@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CentrostalAPI.Migrations {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210918112754_ChangedDeliveryNameToSupply")]
-    partial class ChangedDeliveryNameToSupply {
+    [Migration("20211003182438_AddedMinStock")]
+    partial class AddedMinStock {
         protected override void BuildTargetModel(ModelBuilder modelBuilder) {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,6 +33,9 @@ namespace CentrostalAPI.Migrations {
                 b.Property<bool>("isOriginal")
                     .HasColumnType("bit");
 
+                b.Property<int>("minStock")
+                    .HasColumnType("int");
+
                 b.Property<string>("name")
                     .HasColumnType("nvarchar(max)");
 
@@ -54,6 +57,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -63,6 +67,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -72,6 +77,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220194,
                         steelTypeId = 1
@@ -81,6 +87,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220194,
                         steelTypeId = 1
@@ -90,6 +97,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220754,
                         steelTypeId = 1
@@ -99,6 +107,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220754,
                         steelTypeId = 1
@@ -108,6 +117,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220193,
                         steelTypeId = 1
@@ -117,6 +127,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220193,
                         steelTypeId = 1
@@ -126,6 +137,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 1
@@ -135,6 +147,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 1
@@ -144,6 +157,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220192,
                         steelTypeId = 1
@@ -153,6 +167,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220192,
                         steelTypeId = 1
@@ -162,6 +177,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -171,6 +187,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 30,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -180,6 +197,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -189,6 +207,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -198,6 +217,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220555,
                         steelTypeId = 1
@@ -207,6 +227,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220555,
                         steelTypeId = 1
@@ -216,6 +237,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220754,
                         steelTypeId = 1
@@ -225,6 +247,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220754,
                         steelTypeId = 1
@@ -234,6 +257,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220554,
                         steelTypeId = 1
@@ -243,6 +267,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220554,
                         steelTypeId = 1
@@ -252,6 +277,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220553,
                         steelTypeId = 1
@@ -261,6 +287,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220553,
                         steelTypeId = 1
@@ -270,6 +297,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220552,
                         steelTypeId = 1
@@ -279,6 +307,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220552,
                         steelTypeId = 1
@@ -288,6 +317,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -297,6 +327,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 50,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -306,6 +337,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -315,6 +347,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -324,6 +357,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -333,6 +367,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -342,6 +377,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -351,6 +387,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -360,6 +397,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -369,6 +407,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -378,6 +417,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -387,6 +427,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -396,6 +437,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -405,6 +447,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -414,6 +457,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -423,6 +467,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -432,6 +477,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -441,6 +487,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -450,6 +497,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -459,6 +507,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -468,6 +517,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -477,6 +527,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -486,6 +537,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -495,6 +547,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -504,6 +557,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -513,6 +567,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -522,6 +577,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -531,6 +587,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -540,6 +597,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -549,6 +607,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -558,6 +617,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -567,6 +627,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -576,6 +637,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -585,6 +647,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -594,6 +657,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -603,6 +667,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -612,6 +677,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -621,6 +687,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -630,6 +697,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -639,6 +707,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -648,6 +717,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -657,6 +727,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -666,6 +737,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -675,6 +747,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -684,6 +757,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -693,6 +767,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -702,6 +777,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -711,6 +787,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -720,6 +797,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -729,6 +807,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -738,6 +817,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -747,6 +827,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -756,6 +837,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -765,6 +847,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -774,6 +857,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -783,6 +867,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -792,6 +877,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -801,6 +887,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -810,6 +897,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -819,6 +907,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -828,6 +917,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -837,6 +927,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -846,6 +937,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -855,6 +947,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -864,6 +957,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -873,6 +967,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 1
@@ -882,6 +977,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -891,6 +987,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 1
@@ -900,6 +997,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -909,6 +1007,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220189,
                         steelTypeId = 1
@@ -918,6 +1017,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -927,6 +1027,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 1
@@ -936,6 +1037,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -945,6 +1047,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220188,
                         steelTypeId = 1
@@ -954,6 +1057,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -963,6 +1067,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 1
@@ -972,6 +1077,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -981,6 +1087,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220187,
                         steelTypeId = 1
@@ -990,6 +1097,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -999,6 +1107,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA SILVER",
                         number = 220566,
                         steelTypeId = 1
@@ -1008,6 +1117,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 1
@@ -1017,6 +1127,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 1
@@ -1026,6 +1137,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1035,6 +1147,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1044,6 +1157,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220742,
                         steelTypeId = 2
@@ -1053,6 +1167,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220742,
                         steelTypeId = 2
@@ -1062,6 +1177,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220845,
                         steelTypeId = 2
@@ -1071,6 +1187,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220845,
                         steelTypeId = 2
@@ -1080,6 +1197,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220806,
                         steelTypeId = 2
@@ -1089,6 +1207,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220806,
                         steelTypeId = 2
@@ -1098,6 +1217,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 2
@@ -1107,6 +1227,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 2
@@ -1116,6 +1237,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220802,
                         steelTypeId = 2
@@ -1125,6 +1247,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220802,
                         steelTypeId = 2
@@ -1134,6 +1257,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220700,
                         steelTypeId = 2
@@ -1143,6 +1267,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220700,
                         steelTypeId = 2
@@ -1152,6 +1277,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1161,6 +1287,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1170,6 +1297,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220742,
                         steelTypeId = 2
@@ -1179,6 +1307,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220742,
                         steelTypeId = 2
@@ -1188,6 +1317,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220740,
                         steelTypeId = 2
@@ -1197,6 +1327,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220740,
                         steelTypeId = 2
@@ -1206,6 +1337,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220646,
                         steelTypeId = 2
@@ -1215,6 +1347,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220646,
                         steelTypeId = 2
@@ -1224,6 +1357,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 2
@@ -1233,6 +1367,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 2
@@ -1242,6 +1377,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220649,
                         steelTypeId = 2
@@ -1251,6 +1387,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220649,
                         steelTypeId = 2
@@ -1260,6 +1397,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220700,
                         steelTypeId = 2
@@ -1269,6 +1407,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220700,
                         steelTypeId = 2
@@ -1278,6 +1417,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1287,6 +1427,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1296,6 +1437,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220658,
                         steelTypeId = 2
@@ -1305,6 +1447,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220658,
                         steelTypeId = 2
@@ -1314,6 +1457,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220845,
                         steelTypeId = 2
@@ -1323,6 +1467,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220845,
                         steelTypeId = 2
@@ -1332,6 +1477,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220659,
                         steelTypeId = 2
@@ -1341,6 +1487,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220659,
                         steelTypeId = 2
@@ -1350,6 +1497,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220353,
                         steelTypeId = 2
@@ -1359,6 +1507,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220353,
                         steelTypeId = 2
@@ -1368,6 +1517,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220662,
                         steelTypeId = 2
@@ -1377,6 +1527,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220662,
                         steelTypeId = 2
@@ -1386,6 +1537,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220700,
                         steelTypeId = 2
@@ -1395,6 +1547,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220700,
                         steelTypeId = 2
@@ -1404,6 +1557,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1413,6 +1567,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 2
@@ -1422,6 +1577,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220741,
                         steelTypeId = 2
@@ -1431,6 +1587,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220741,
                         steelTypeId = 2
@@ -1440,6 +1597,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220740,
                         steelTypeId = 2
@@ -1449,6 +1607,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220740,
                         steelTypeId = 2
@@ -1458,6 +1617,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220542,
                         steelTypeId = 2
@@ -1467,6 +1627,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220542,
                         steelTypeId = 2
@@ -1476,6 +1637,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220436,
                         steelTypeId = 2
@@ -1485,6 +1647,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220436,
                         steelTypeId = 2
@@ -1494,6 +1657,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220541,
                         steelTypeId = 2
@@ -1503,6 +1667,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220541,
                         steelTypeId = 2
@@ -1512,6 +1677,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 2
@@ -1521,6 +1687,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 2
@@ -1530,6 +1697,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1539,6 +1707,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1548,6 +1717,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220202,
                         steelTypeId = 3
@@ -1557,6 +1727,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220202,
                         steelTypeId = 3
@@ -1566,6 +1737,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 3
@@ -1575,6 +1747,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 3
@@ -1584,6 +1757,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220201,
                         steelTypeId = 3
@@ -1593,6 +1767,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220201,
                         steelTypeId = 3
@@ -1602,6 +1777,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 3
@@ -1611,6 +1787,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 3
@@ -1620,6 +1797,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220308,
                         steelTypeId = 3
@@ -1629,6 +1807,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220308,
                         steelTypeId = 3
@@ -1638,6 +1817,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -1647,6 +1827,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -1656,6 +1837,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1665,6 +1847,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1674,6 +1857,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220815,
                         steelTypeId = 3
@@ -1683,6 +1867,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220815,
                         steelTypeId = 3
@@ -1692,6 +1877,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220814,
                         steelTypeId = 3
@@ -1701,6 +1887,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220814,
                         steelTypeId = 3
@@ -1710,6 +1897,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220847,
                         steelTypeId = 3
@@ -1719,6 +1907,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220847,
                         steelTypeId = 3
@@ -1728,6 +1917,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 3
@@ -1737,6 +1927,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 3
@@ -1746,6 +1937,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220339,
                         steelTypeId = 3
@@ -1755,6 +1947,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220339,
                         steelTypeId = 3
@@ -1764,6 +1957,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -1773,6 +1967,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 60,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -1782,6 +1977,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1791,6 +1987,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1800,6 +1997,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220338,
                         steelTypeId = 3
@@ -1809,6 +2007,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220338,
                         steelTypeId = 3
@@ -1818,6 +2017,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 3
@@ -1827,6 +2027,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 3
@@ -1836,6 +2037,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220337,
                         steelTypeId = 3
@@ -1845,6 +2047,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220337,
                         steelTypeId = 3
@@ -1854,6 +2057,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 3
@@ -1863,6 +2067,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 3
@@ -1872,6 +2077,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220339,
                         steelTypeId = 3
@@ -1881,6 +2087,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220339,
                         steelTypeId = 3
@@ -1890,6 +2097,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -1899,6 +2107,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 80,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -1908,6 +2117,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1917,6 +2127,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 3
@@ -1926,6 +2137,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220198,
                         steelTypeId = 3
@@ -1935,6 +2147,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220198,
                         steelTypeId = 3
@@ -1944,6 +2157,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 3
@@ -1953,6 +2167,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 3
@@ -1962,6 +2177,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220197,
                         steelTypeId = 3
@@ -1971,6 +2187,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220197,
                         steelTypeId = 3
@@ -1980,6 +2197,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 3
@@ -1989,6 +2207,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 3
@@ -1998,6 +2217,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 3
@@ -2007,6 +2227,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 3
@@ -2016,6 +2237,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -2025,6 +2247,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -2034,6 +2257,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 3
@@ -2043,6 +2267,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 3
@@ -2052,6 +2277,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220762,
                         steelTypeId = 3
@@ -2061,6 +2287,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220762,
                         steelTypeId = 3
@@ -2070,6 +2297,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220758,
                         steelTypeId = 3
@@ -2079,6 +2307,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220758,
                         steelTypeId = 3
@@ -2088,6 +2317,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220343,
                         steelTypeId = 3
@@ -2097,6 +2327,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220343,
                         steelTypeId = 3
@@ -2106,6 +2337,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220342,
                         steelTypeId = 3
@@ -2115,6 +2347,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220342,
                         steelTypeId = 3
@@ -2124,6 +2357,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 3
@@ -2133,6 +2367,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 3
@@ -2142,6 +2377,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -2151,6 +2387,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -2160,6 +2397,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 3
@@ -2169,6 +2407,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 3
@@ -2178,6 +2417,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220763,
                         steelTypeId = 3
@@ -2187,6 +2427,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220763,
                         steelTypeId = 3
@@ -2196,6 +2437,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220758,
                         steelTypeId = 3
@@ -2205,6 +2447,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220758,
                         steelTypeId = 3
@@ -2214,6 +2457,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220406,
                         steelTypeId = 3
@@ -2223,6 +2467,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220406,
                         steelTypeId = 3
@@ -2232,6 +2477,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 3
@@ -2241,6 +2487,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 3
@@ -2250,6 +2497,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 3
@@ -2259,6 +2507,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 3
@@ -2268,6 +2517,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -2277,6 +2527,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 3
@@ -2286,6 +2537,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 3
@@ -2295,6 +2547,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 3
@@ -2304,6 +2557,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220707,
                         steelTypeId = 3
@@ -2313,6 +2567,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220707,
                         steelTypeId = 3
@@ -2322,6 +2577,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220712,
                         steelTypeId = 3
@@ -2331,6 +2587,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220712,
                         steelTypeId = 3
@@ -2340,6 +2597,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220708,
                         steelTypeId = 3
@@ -2349,6 +2607,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220708,
                         steelTypeId = 3
@@ -2358,6 +2617,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 3
@@ -2367,6 +2627,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 3
@@ -2376,6 +2637,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220709,
                         steelTypeId = 3
@@ -2385,6 +2647,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220709,
                         steelTypeId = 3
@@ -2394,6 +2657,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 3
@@ -2403,6 +2667,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 3
@@ -2412,6 +2677,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 4
@@ -2421,6 +2687,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 4
@@ -2430,6 +2697,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220738,
                         steelTypeId = 4
@@ -2439,6 +2707,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220738,
                         steelTypeId = 4
@@ -2448,6 +2717,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220739,
                         steelTypeId = 4
@@ -2457,6 +2727,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220739,
                         steelTypeId = 4
@@ -2466,6 +2737,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220656,
                         steelTypeId = 4
@@ -2475,6 +2747,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220656,
                         steelTypeId = 4
@@ -2484,6 +2757,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 4
@@ -2493,6 +2767,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 4
@@ -2502,6 +2777,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220606,
                         steelTypeId = 4
@@ -2511,6 +2787,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220606,
                         steelTypeId = 4
@@ -2520,6 +2797,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 4
@@ -2529,6 +2807,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 4
@@ -2538,6 +2817,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 4
@@ -2547,6 +2827,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 4
@@ -2556,6 +2837,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220738,
                         steelTypeId = 4
@@ -2565,6 +2847,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220738,
                         steelTypeId = 4
@@ -2574,6 +2857,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220739,
                         steelTypeId = 4
@@ -2583,6 +2867,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220739,
                         steelTypeId = 4
@@ -2592,6 +2877,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220607,
                         steelTypeId = 4
@@ -2601,6 +2887,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220607,
                         steelTypeId = 4
@@ -2610,6 +2897,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 4
@@ -2619,6 +2907,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 4
@@ -2628,6 +2917,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220606,
                         steelTypeId = 4
@@ -2637,6 +2927,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220606,
                         steelTypeId = 4
@@ -2646,6 +2937,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 4
@@ -2655,6 +2947,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 4
@@ -2664,6 +2957,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 4
@@ -2673,6 +2967,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 4
@@ -2682,6 +2977,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220707,
                         steelTypeId = 4
@@ -2691,6 +2987,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220707,
                         steelTypeId = 4
@@ -2700,6 +2997,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220712,
                         steelTypeId = 4
@@ -2709,6 +3007,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220712,
                         steelTypeId = 4
@@ -2718,6 +3017,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220708,
                         steelTypeId = 4
@@ -2727,6 +3027,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220708,
                         steelTypeId = 4
@@ -2736,6 +3037,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 4
@@ -2745,6 +3047,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 4
@@ -2754,6 +3057,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220709,
                         steelTypeId = 4
@@ -2763,6 +3067,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220709,
                         steelTypeId = 4
@@ -2772,6 +3077,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 4
@@ -2781,6 +3087,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 4
@@ -2790,6 +3097,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 5
@@ -2799,6 +3107,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 5
@@ -2808,6 +3117,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220202,
                         steelTypeId = 5
@@ -2817,6 +3127,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220202,
                         steelTypeId = 5
@@ -2826,6 +3137,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 5
@@ -2835,6 +3147,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220756,
                         steelTypeId = 5
@@ -2844,6 +3157,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220201,
                         steelTypeId = 5
@@ -2853,6 +3167,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220201,
                         steelTypeId = 5
@@ -2862,6 +3177,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 5
@@ -2871,6 +3187,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220180,
                         steelTypeId = 5
@@ -2880,6 +3197,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220308,
                         steelTypeId = 5
@@ -2889,6 +3207,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220308,
                         steelTypeId = 5
@@ -2898,6 +3217,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -2907,6 +3227,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 45,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -2916,6 +3237,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 5
@@ -2925,6 +3247,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220747,
                         steelTypeId = 5
@@ -2934,6 +3257,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220198,
                         steelTypeId = 5
@@ -2943,6 +3267,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220198,
                         steelTypeId = 5
@@ -2952,6 +3277,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 5
@@ -2961,6 +3287,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220755,
                         steelTypeId = 5
@@ -2970,6 +3297,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220197,
                         steelTypeId = 5
@@ -2979,6 +3307,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220197,
                         steelTypeId = 5
@@ -2988,6 +3317,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 5
@@ -2997,6 +3327,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220179,
                         steelTypeId = 5
@@ -3006,6 +3337,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 440488,
                         steelTypeId = 5
@@ -3015,6 +3347,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 440488,
                         steelTypeId = 5
@@ -3024,6 +3357,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -3033,6 +3367,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 130,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -3042,6 +3377,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 5
@@ -3051,6 +3387,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 5
@@ -3060,6 +3397,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220762,
                         steelTypeId = 5
@@ -3069,6 +3407,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220762,
                         steelTypeId = 5
@@ -3078,6 +3417,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220759,
                         steelTypeId = 5
@@ -3087,6 +3427,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220759,
                         steelTypeId = 5
@@ -3096,6 +3437,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220346,
                         steelTypeId = 5
@@ -3105,6 +3447,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220346,
                         steelTypeId = 5
@@ -3114,6 +3457,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220342,
                         steelTypeId = 5
@@ -3123,6 +3467,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220342,
                         steelTypeId = 5
@@ -3132,6 +3477,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 5
@@ -3141,6 +3487,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 5
@@ -3150,6 +3497,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -3159,6 +3507,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 200,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -3168,6 +3517,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 5
@@ -3177,6 +3527,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 5
@@ -3186,6 +3537,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220763,
                         steelTypeId = 5
@@ -3195,6 +3547,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220763,
                         steelTypeId = 5
@@ -3204,6 +3557,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220758,
                         steelTypeId = 5
@@ -3213,6 +3567,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220758,
                         steelTypeId = 5
@@ -3222,6 +3577,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220406,
                         steelTypeId = 5
@@ -3231,6 +3587,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220406,
                         steelTypeId = 5
@@ -3240,6 +3597,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 5
@@ -3249,6 +3607,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 5
@@ -3258,6 +3617,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 5
@@ -3267,6 +3627,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220307,
                         steelTypeId = 5
@@ -3276,6 +3637,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -3285,6 +3647,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 260,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220340,
                         steelTypeId = 5
@@ -3294,6 +3657,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 5
@@ -3303,6 +3667,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "TARCZA OSŁANIAJĄCA",
                         number = 220637,
                         steelTypeId = 5
@@ -3312,6 +3677,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220707,
                         steelTypeId = 5
@@ -3321,6 +3687,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "OSŁONA",
                         number = 220707,
                         steelTypeId = 5
@@ -3330,6 +3697,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220712,
                         steelTypeId = 5
@@ -3339,6 +3707,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "NASADKA DYSZY",
                         number = 220712,
                         steelTypeId = 5
@@ -3348,6 +3717,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220708,
                         steelTypeId = 5
@@ -3357,6 +3727,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "DYSZA",
                         number = 220708,
                         steelTypeId = 5
@@ -3366,6 +3737,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 5
@@ -3375,6 +3747,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "PIERŚCIEŃ ZAWIR.",
                         number = 220405,
                         steelTypeId = 5
@@ -3384,6 +3757,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220709,
                         steelTypeId = 5
@@ -3393,6 +3767,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "ELEKTRODA",
                         number = 220709,
                         steelTypeId = 5
@@ -3402,6 +3777,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = true,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 5
@@ -3411,6 +3787,7 @@ namespace CentrostalAPI.Migrations {
                         amount = 0,
                         current = 400,
                         isOriginal = false,
+                        minStock = 0,
                         name = "RURKA WODNA",
                         number = 220571,
                         steelTypeId = 5

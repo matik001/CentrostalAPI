@@ -8,7 +8,6 @@ using CentrostalAPI.DB;
 using CentrostalAPI.DB.Models;
 using CentrostalAPI.DTOs;
 using CentrostalAPI.HttpErrors;
-using CentrostalAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CentrostalAPI.IServices {

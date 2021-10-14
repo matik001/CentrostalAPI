@@ -10,7 +10,7 @@ namespace CentrostalAPI.DTOs {
         public DateTime createdDate { get; set; }
         public DateTime? lastEditedDate { get; set; }
         public DateTime? executedDate { get; set; }
-        public string status { get; set; }
+        public StatusDTO status { get; set; }
         public string orderingPerson { get; set; }
         public bool isSupply { get; set; }
         public ICollection<OrderItemDTO> orderItems { get; set; }

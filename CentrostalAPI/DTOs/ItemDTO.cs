@@ -12,6 +12,7 @@ namespace CentrostalAPI.DTOs {
         public int current { get; set; }
         public bool isOriginal { get; set; }
         public string steelType { get; set; }
+        public int minStock { get; set; }
     }
     public class UpdateItemDTO : CreateItemDTO { }
     public class ItemDTO : CreateItemDTO {

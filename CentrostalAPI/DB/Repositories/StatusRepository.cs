@@ -14,17 +14,186 @@ namespace CentrostalAPI.DB.Repositories {
 
         public static void seed(EntityTypeBuilder<Status> builder) {
             builder.HasData(
-                new Status() { id = 1, name = "zlecone" },
-                new Status() { id = 2, name = "zrealizowane" },
-                new Status() { id = 3, name = "anulowane" },
-                new Status() { id = 4, name = "odebrane" }
+
+                ///// SUPPPLY
+                new Status() {
+                    id = 1,
+                    name = "edytowalne",
+                    canAdminCancel = true,
+                    canAdminChangeStatus = true,
+                    canAdminEdit = true,
+                    canAnyoneCancel = true,
+                    canAnyoneChangeStatus = true,
+                    canAnyoneEdit = true,
+                    canChairmanCancel = true,
+                    canChairmanChangeStatus = true,
+                    canChairmanEdit = true,
+                    color = "#999966",
+                    nextStatusMsg = "Przekaż dalej",
+                    nextStatusId = 2
+                },
+                new Status() {
+                    id = 2,
+                    name = "utworzone",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = false,
+                    canChairmanChangeStatus = false,
+                    canChairmanEdit = false,
+                    canAdminCancel = true,
+                    canAdminChangeStatus = true,
+                    canAdminEdit = true,
+                    color = "#99cc00",
+                    nextStatusMsg = "Oznacz jako zapytane",
+                    nextStatusId = 3
+                },
+                new Status() {
+                    id = 3,
+                    name = "zapytane",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = false,
+                    canChairmanChangeStatus = false,
+                    canChairmanEdit = false,
+                    canAdminCancel = true,
+                    canAdminChangeStatus = true,
+                    canAdminEdit = true,
+                    color = "#cc66ff",
+                    nextStatusMsg = "Przekaż do zatwierdzenia",
+                    nextStatusId = 4
+                },
+                new Status() {
+                    id = 4,
+                    name = "niezatwierdzone",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = true,
+                    canChairmanChangeStatus = true,
+                    canChairmanEdit = true,
+                    canAdminCancel = true,
+                    canAdminChangeStatus = false,
+                    canAdminEdit = true,
+                    color = "#ff6600",
+                    nextStatusMsg = "Zatwierdź",
+                    nextStatusId = 5
+                },
+                new Status() {
+                    id = 5,
+                    name = "zatwierdzone",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = false,
+                    canChairmanChangeStatus = false,
+                    canChairmanEdit = false,
+                    canAdminCancel = true,
+                    canAdminChangeStatus = true,
+                    canAdminEdit = true,
+                    color = "#33cc33",
+                    nextStatusMsg = "Oznacz jako zamówione",
+                    nextStatusId = 6
+                },
+                new Status() {
+                    id = 6,
+                    name = "zamówione",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = false,
+                    canChairmanChangeStatus = false,
+                    canChairmanEdit = false,
+                    canAdminCancel = true,
+                    canAdminChangeStatus = true,
+                    canAdminEdit = true,
+                    color = "#0066cc",
+                    nextStatusMsg = "Przyjmuję towar",
+                    nextStatusId = 7
+                },
+                new Status() {
+                    id = 7,
+                    name = "zrealizowane",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = false,
+                    canChairmanChangeStatus = false,
+                    canChairmanEdit = false,
+                    canAdminCancel = false,
+                    canAdminChangeStatus = false,
+                    canAdminEdit = false,
+                    color = "#009933",
+                    shouldUpdateAmount = true
+                },
+
+                ///////// SUPPLY AND RELEASE
+                new Status() {
+                    id = 8,
+                    name = "anulowane",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = false,
+                    canChairmanChangeStatus = false,
+                    canChairmanEdit = false,
+                    canAdminCancel = false,
+                    canAdminChangeStatus = false,
+                    canAdminEdit = false,
+                    color = "#cc0000",
+                },
+
+
+                 /////// RELEASE
+                 new Status() {
+                     id = 9,
+                     name = "edytowalne",
+                     canAdminCancel = true,
+                     canAdminChangeStatus = true,
+                     canAdminEdit = true,
+                     canAnyoneCancel = true,
+                     canAnyoneChangeStatus = true,
+                     canAnyoneEdit = true,
+                     canChairmanCancel = true,
+                     canChairmanChangeStatus = true,
+                     canChairmanEdit = true,
+                     color = "#999966",
+                     nextStatusMsg = "Wydaj",
+                     nextStatusId = 10
+                 },
+                new Status() {
+                    id = 10,
+                    name = "wydane",
+                    canAnyoneCancel = false,
+                    canAnyoneChangeStatus = false,
+                    canAnyoneEdit = false,
+                    canChairmanCancel = false,
+                    canChairmanChangeStatus = false,
+                    canChairmanEdit = false,
+                    canAdminCancel = false,
+                    canAdminChangeStatus = false,
+                    canAdminEdit = false,
+                    color = "#009933",
+                    shouldUpdateAmount = true
+                }
             );
         }
     }
+
     public enum Statuses {
-        created = 1,
-        executed = 2,
-        canceled = 3,
-        received = 4
+        /// order - supply
+        editableSupply = 1,
+        created = 2,
+        asked = 3,
+        unaccepted = 4,
+        accepted = 5,
+        ordered = 6,
+        realized = 7,
+
+        canceled = 8,
+
+        editableGiving = 9,
+        given = 10,
     }
 }

@@ -4,14 +4,16 @@ using CentrostalAPI.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CentrostalAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211014130830_StatusesAddedshouldUpdateAmount")]
+    partial class StatusesAddedshouldUpdateAmount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4385,7 +4387,7 @@ namespace CentrostalAPI.Migrations
                             canChairmanChangeStatus = true,
                             canChairmanEdit = true,
                             color = "#ff6600",
-                            name = "niezatwierdzone",
+                            name = "nie zatwierdzone",
                             nextStatusId = 5,
                             nextStatusMsg = "Zatwierdź",
                             shouldUpdateAmount = false

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CentrostalAPI.Models;
 
 namespace CentrostalAPI.DB.Models {
     public class Order : IHavingId {

@@ -10,9 +10,11 @@ using CentrostalAPI.DTOs;
 using CentrostalAPI.Helpers;
 using CentrostalAPI.HttpErrors;
 using CentrostalAPI.IServices;
-using CentrostalAPI.Models;
+using CentrostalAPI.DB.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static CentrostalAPI.DB.Models.Role;
+using static CentrostalAPI.DB.Repositories.RoleRepository;
 
 namespace CentrostalAPI.Services {
     public class UserService : IUserService {
@@ -40,9 +42,10 @@ namespace CentrostalAPI.Services {
         }
         public async Task<UserLoginResponseDTO> login(UserLoginRequestDTO loginRequest) {
             var user = await _unitOfWork.users.one(u =>
-                !u.isBlocked && (u.username == loginRequest.username || u.email == loginRequest.username));
+                u.username == loginRequest.username || u.email == loginRequest.username,
+                new[] { "userRoles.role" });
 
-            if(user == null || user.isBlocked) {
+            if(user == null || user.userRoles.Any(a => a.roleId == (int)Roles.Blocked)) {
                 return null;
             }
 
@@ -61,7 +64,7 @@ namespace CentrostalAPI.Services {
                 token = token,
                 expirationTime = JwtHelper.getNewExpirationTime(),
                 userId = user.id,
-                isAdmin = user.isAdmin
+                roles = user.userRoles.Select(a => a.role.name).ToList()
             };
         }
 

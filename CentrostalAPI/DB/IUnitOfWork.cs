@@ -13,7 +13,8 @@ namespace CentrostalAPI.DB {
         IStatusRepository statuses { get; }
         ISteelTypeRepository steelTypes { get; }
         IUserRepository users { get; }
-
+        IRoleRepository roles { get; }
+        IUserRoleRepository userRoles { get; }
 
         Task saveAsync();
     }

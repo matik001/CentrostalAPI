@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CentrostalAPI.DB.Models;
 using CentrostalAPI.DTOs;
-using CentrostalAPI.Models;
 
 namespace CentrostalAPI.Config {
     public class MapperInitializer : Profile {
@@ -34,11 +33,13 @@ namespace CentrostalAPI.Config {
 
             CreateMap<OrderItem, OrderItemDTO>();
 
+            CreateMap<Status, StatusDTO>().ReverseMap();
+
             CreateMap<Order, OrderDTO>()
                 .ForMember(a => a.orderingPerson,
                     s => s.MapFrom(x => x.orderingUser.ToString()))
                 .ForMember(a => a.status,
-                    s => s.MapFrom(x => x.status.name));
+                    s => s.MapFrom(x => x.status));
         }
     }
 }

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CentrostalAPI.DB.Models;
 using CentrostalAPI.DB.Repositories;
-using CentrostalAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CentrostalAPI.DB {
@@ -16,6 +15,8 @@ namespace CentrostalAPI.DB {
         public DbSet<Status> statuses { get; set; }
         public DbSet<SteelType> steelTypes { get; set; }
         public DbSet<User> users { get; set; }
+        public DbSet<Role> roles { get; set; }
+        public DbSet<UserRole> userRoles { get; set; }
 
         public ApplicationDbContext(DbContextOptions options) : base(options) {
 
@@ -66,9 +67,21 @@ namespace CentrostalAPI.DB {
                 .WithOne(order => order.orderingUser)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<User>()
+                .HasMany(user => user.userRoles)
+                .WithOne(userRole => userRole.user)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Role>()
+                .HasMany(role => role.userRoles)
+                .WithOne(userRole => userRole.role)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
             StatusRepository.seed(modelBuilder.Entity<Status>());
             SteelTypeRepository.seed(modelBuilder.Entity<SteelType>());
             ItemsRepository.seed(modelBuilder.Entity<Item>());
+            RoleRepository.seed(modelBuilder.Entity<Role>());
         }
     }
 }

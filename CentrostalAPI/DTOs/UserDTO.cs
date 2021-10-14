@@ -20,7 +20,7 @@ namespace CentrostalAPI.DTOs {
         public string lastName { get; set; }
         public string token { get; set; }
         public DateTime expirationTime { get; set; }
-        public bool isAdmin { get; set; }
+        public ICollection<string> roles { get; set; }
     }
     public class UserRegistrationDTO {
         [Required(ErrorMessage = "username is required")]

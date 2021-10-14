@@ -14,6 +14,8 @@ namespace CentrostalAPI.DB {
         public IStatusRepository statuses { get; }
         public ISteelTypeRepository steelTypes { get; }
         public IUserRepository users { get; }
+        public IRoleRepository roles { get; }
+        public IUserRoleRepository userRoles { get; }
 
 
         private readonly ApplicationDbContext _context;
@@ -24,6 +26,8 @@ namespace CentrostalAPI.DB {
             statuses = new StatusRepository(context);
             steelTypes = new SteelTypeRepository(context);
             users = new UserRepository(context);
+            roles = new RoleRepository(context);
+            userRoles = new UserRoleRepository(context);
         }
         public async Task saveAsync() {
             await _context.SaveChangesAsync();

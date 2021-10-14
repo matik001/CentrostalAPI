@@ -4,14 +4,16 @@ using CentrostalAPI.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CentrostalAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211014122121_StatusesImprovement")]
+    partial class StatusesImprovement
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4310,9 +4312,6 @@ namespace CentrostalAPI.Migrations
                     b.Property<string>("nextStatusMsg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("shouldUpdateAmount")
-                        .HasColumnType("bit");
-
                     b.HasKey("id");
 
                     b.ToTable("statuses");
@@ -4333,8 +4332,7 @@ namespace CentrostalAPI.Migrations
                             color = "#999966",
                             name = "edytowalne",
                             nextStatusId = 2,
-                            nextStatusMsg = "Przekaż dalej",
-                            shouldUpdateAmount = false
+                            nextStatusMsg = "Przekaż dalej"
                         },
                         new
                         {
@@ -4351,8 +4349,7 @@ namespace CentrostalAPI.Migrations
                             color = "#99cc00",
                             name = "utworzone",
                             nextStatusId = 3,
-                            nextStatusMsg = "Oznacz jako zapytane",
-                            shouldUpdateAmount = false
+                            nextStatusMsg = "Oznacz jako zapytane"
                         },
                         new
                         {
@@ -4369,8 +4366,7 @@ namespace CentrostalAPI.Migrations
                             color = "#cc66ff",
                             name = "zapytane",
                             nextStatusId = 4,
-                            nextStatusMsg = "Przekaż do zatwierdzenia",
-                            shouldUpdateAmount = false
+                            nextStatusMsg = "Przekaż do zatwierdzenia"
                         },
                         new
                         {
@@ -4385,10 +4381,9 @@ namespace CentrostalAPI.Migrations
                             canChairmanChangeStatus = true,
                             canChairmanEdit = true,
                             color = "#ff6600",
-                            name = "niezatwierdzone",
+                            name = "nie zatwierdzone",
                             nextStatusId = 5,
-                            nextStatusMsg = "Zatwierdź",
-                            shouldUpdateAmount = false
+                            nextStatusMsg = "Zatwierdź"
                         },
                         new
                         {
@@ -4405,8 +4400,7 @@ namespace CentrostalAPI.Migrations
                             color = "#33cc33",
                             name = "zatwierdzone",
                             nextStatusId = 6,
-                            nextStatusMsg = "Oznacz jako zamówione",
-                            shouldUpdateAmount = false
+                            nextStatusMsg = "Oznacz jako zamówione"
                         },
                         new
                         {
@@ -4423,8 +4417,7 @@ namespace CentrostalAPI.Migrations
                             color = "#0066cc",
                             name = "zamówione",
                             nextStatusId = 7,
-                            nextStatusMsg = "Przyjmuję towar",
-                            shouldUpdateAmount = false
+                            nextStatusMsg = "Przyjmuję towar"
                         },
                         new
                         {
@@ -4439,8 +4432,7 @@ namespace CentrostalAPI.Migrations
                             canChairmanChangeStatus = false,
                             canChairmanEdit = false,
                             color = "#009933",
-                            name = "zrealizowane",
-                            shouldUpdateAmount = true
+                            name = "zrealizowane"
                         },
                         new
                         {
@@ -4455,8 +4447,7 @@ namespace CentrostalAPI.Migrations
                             canChairmanChangeStatus = false,
                             canChairmanEdit = false,
                             color = "#cc0000",
-                            name = "anulowane",
-                            shouldUpdateAmount = false
+                            name = "anulowane"
                         },
                         new
                         {
@@ -4473,8 +4464,7 @@ namespace CentrostalAPI.Migrations
                             color = "#999966",
                             name = "edytowalne",
                             nextStatusId = 10,
-                            nextStatusMsg = "Wydaj",
-                            shouldUpdateAmount = false
+                            nextStatusMsg = "Wydaj"
                         },
                         new
                         {
@@ -4489,8 +4479,7 @@ namespace CentrostalAPI.Migrations
                             canChairmanChangeStatus = false,
                             canChairmanEdit = false,
                             color = "#009933",
-                            name = "wydane",
-                            shouldUpdateAmount = true
+                            name = "wydane"
                         });
                 });
 

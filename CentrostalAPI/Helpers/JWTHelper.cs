@@ -6,9 +6,11 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using CentrostalAPI.Models;
+using CentrostalAPI.DB.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using static CentrostalAPI.DB.Models.Role;
+using static CentrostalAPI.DB.Repositories.RoleRepository;
 
 namespace CentrostalAPI.Helpers {
     public static class JwtHelper {
@@ -38,7 +40,8 @@ namespace CentrostalAPI.Helpers {
 
             var claimsIdentity = new ClaimsIdentity(new[] {
                 new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
-                new Claim("isAdmin", user.isAdmin.ToString()),
+                new Claim("isAdmin", user.userRoles.Any(a=>a.roleId == (int)Roles.Admin).ToString()),
+                new Claim("isChairman", user.userRoles.Any(a=>a.roleId == (int)Roles.Chairman).ToString()),
             });
             var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature);
 

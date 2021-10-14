@@ -65,15 +65,17 @@ namespace CentrostalAPI.Controllers {
         [Authorize]
         [HttpPut("{id:int}")]
         public async Task<IActionResult> update([FromRoute] int id, [FromBody] UpdateOrderDTO order) {
-            await _ordersService.update(id, order);
+            var user = await _userService.getUser(this, new[] { "userRoles.role" });
+            await _ordersService.update(user, id, order);
             await _unitOfWork.saveAsync();
             return NoContent();
         }
 
         [Authorize]
-        [HttpPatch("{id:int}/finish")]
-        public async Task<IActionResult> finish([FromRoute] int id) {
-            await _ordersService.finishOrder(id);
+        [HttpPatch("{id:int}/next_status")]
+        public async Task<IActionResult> changeStatus([FromRoute] int id) {
+            var user = await _userService.getUser(this, new[] { "userRoles.role" });
+            await _ordersService.changeToNextStatus(user, id);
             await _unitOfWork.saveAsync();
             return NoContent();
         }
@@ -81,7 +83,8 @@ namespace CentrostalAPI.Controllers {
         [Authorize]
         [HttpPatch("{id:int}/cancel")]
         public async Task<IActionResult> cancel([FromRoute] int id) {
-            await _ordersService.cancelOrder(id);
+            var user = await _userService.getUser(this, new[] { "userRoles.role" });
+            await _ordersService.cancelOrder(user, id);
             await _unitOfWork.saveAsync();
             return NoContent();
         }

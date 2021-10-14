@@ -18,6 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 namespace CentrostalAPI.Config {
     public static class AuthorizationPolicies {
         public const string AdminOnly = "AdminOnly";
+        public const string ChairmanOnly = "ChairmanOnly";
     }
     public static class ServiceConfigExtentions {
         public static void configureAuthentication(this IServiceCollection services) {
@@ -39,6 +40,9 @@ namespace CentrostalAPI.Config {
             services.AddAuthorization(options => {
                 options.AddPolicy(AuthorizationPolicies.AdminOnly, policy => {
                     policy.RequireClaim("isAdmin", true.ToString());
+                });
+                options.AddPolicy(AuthorizationPolicies.ChairmanOnly, policy => {
+                    policy.RequireClaim("isChairman", true.ToString());
                 });
             });
         }

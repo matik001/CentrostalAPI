@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CentrostalAPI.DB.Models {
-    public class Status : IHavingId {
-        public int id { get; set; }
+namespace CentrostalAPI.DTOs {
+    public class StatusDTO {
         public string name { get; set; }
-        public ICollection<Order> orders { get; set; }
 
         public bool canAnyoneCancel { get; set; }
         public bool canAnyoneChangeStatus { get; set; }
@@ -24,7 +22,5 @@ namespace CentrostalAPI.DB.Models {
 
         public string color { get; set; }
         public string nextStatusMsg { get; set; }
-        public int? nextStatusId { get; set; }
-        public bool shouldUpdateAmount { get; set; }
     }
 }

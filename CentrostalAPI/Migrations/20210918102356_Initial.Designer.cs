@@ -7,4041 +7,3641 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CentrostalAPI.Migrations
-{
+namespace CentrostalAPI.Migrations {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210918102356_Initial")]
-    partial class Initial
-    {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
+    partial class Initial {
+        protected override void BuildTargetModel(ModelBuilder modelBuilder) {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Item", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("amount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("current")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("isOriginal")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("number")
-                        .HasColumnType("int");
-
-                    b.Property<int>("steelTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("steelTypeId");
-
-                    b.ToTable("items");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 2,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 3,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220194,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 4,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220194,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 5,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220754,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 6,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220754,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 7,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220193,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 8,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220193,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 9,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 10,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 11,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220192,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 12,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220192,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 13,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 14,
-                            amount = 0,
-                            current = 30,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 15,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 16,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 17,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220555,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 18,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220555,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 19,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220754,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 20,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220754,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 21,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220554,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 22,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220554,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 23,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220553,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 24,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220553,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 25,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220552,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 26,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220552,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 27,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 28,
-                            amount = 0,
-                            current = 50,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 29,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 30,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 31,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 32,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 33,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 34,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 35,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 36,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 37,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 38,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 39,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 40,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 41,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 42,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 43,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 44,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 45,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 46,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 47,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 48,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 49,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 50,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 51,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 52,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 53,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 54,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 55,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 56,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 57,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 58,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 59,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 60,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 61,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 62,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 63,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 64,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 65,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 66,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 67,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 68,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 69,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 70,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 71,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 72,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 73,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 74,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 75,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 76,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 77,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 78,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 79,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 80,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 81,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 82,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 83,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 84,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 85,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 86,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 87,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 88,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 89,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 90,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 91,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 92,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 93,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 94,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 95,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 96,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220189,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 97,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 98,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 99,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 100,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220188,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 101,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 102,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 103,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 104,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220187,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 105,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 106,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "ELEKTRODA SILVER",
-                            number = 220566,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 107,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 108,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 1
-                        },
-                        new
-                        {
-                            id = 109,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 110,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 111,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220742,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 112,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220742,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 113,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220845,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 114,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220845,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 115,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220806,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 116,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220806,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 117,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 118,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 119,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220802,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 120,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220802,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 121,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220700,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 122,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220700,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 123,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 124,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 125,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220742,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 126,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220742,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 127,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220740,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 128,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220740,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 129,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220646,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 130,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220646,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 131,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 132,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 133,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220649,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 134,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220649,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 135,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220700,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 136,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220700,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 137,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 138,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 139,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220658,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 140,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220658,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 141,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220845,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 142,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220845,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 143,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220659,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 144,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220659,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 145,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220353,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 146,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220353,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 147,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220662,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 148,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220662,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 149,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220700,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 150,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220700,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 151,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 152,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 153,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220741,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 154,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220741,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 155,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220740,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 156,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220740,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 157,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220542,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 158,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220542,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 159,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220436,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 160,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220436,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 161,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220541,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 162,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220541,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 163,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 164,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 2
-                        },
-                        new
-                        {
-                            id = 165,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 166,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 167,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220202,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 168,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220202,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 169,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 170,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 171,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220201,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 172,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220201,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 173,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 174,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 175,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220308,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 176,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220308,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 177,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 178,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 179,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 180,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 181,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220815,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 182,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220815,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 183,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220814,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 184,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220814,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 185,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220847,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 186,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220847,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 187,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 188,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 189,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220339,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 190,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220339,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 191,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 192,
-                            amount = 0,
-                            current = 60,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 193,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 194,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 195,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220338,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 196,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220338,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 197,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 198,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 199,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220337,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 200,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220337,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 201,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 202,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 203,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220339,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 204,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220339,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 205,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 206,
-                            amount = 0,
-                            current = 80,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 207,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 208,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 209,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220198,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 210,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220198,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 211,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 212,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 213,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220197,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 214,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220197,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 215,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 216,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 217,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 218,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 219,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 220,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 221,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 222,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 223,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220762,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 224,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220762,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 225,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220758,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 226,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220758,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 227,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220343,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 228,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220343,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 229,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220342,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 230,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220342,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 231,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 232,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 233,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 234,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 235,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 236,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 237,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220763,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 238,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220763,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 239,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220758,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 240,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220758,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 241,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220406,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 242,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220406,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 243,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 244,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 245,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 246,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 247,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 248,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 249,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 250,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 251,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220707,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 252,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220707,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 253,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220712,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 254,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220712,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 255,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220708,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 256,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220708,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 257,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 258,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 259,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220709,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 260,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220709,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 261,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 262,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 3
-                        },
-                        new
-                        {
-                            id = 263,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 264,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 265,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220738,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 266,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220738,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 267,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220739,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 268,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220739,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 269,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220656,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 270,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220656,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 271,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 272,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 273,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220606,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 274,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220606,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 275,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 276,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 277,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 278,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 279,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220738,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 280,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220738,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 281,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220739,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 282,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220739,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 283,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220607,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 284,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220607,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 285,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 286,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 287,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220606,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 288,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220606,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 289,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 290,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 291,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 292,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 293,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220707,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 294,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220707,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 295,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220712,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 296,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220712,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 297,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220708,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 298,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220708,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 299,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 300,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 301,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220709,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 302,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220709,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 303,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 304,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 4
-                        },
-                        new
-                        {
-                            id = 305,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 306,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 307,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220202,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 308,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220202,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 309,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 310,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220756,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 311,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220201,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 312,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220201,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 313,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 314,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220180,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 315,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220308,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 316,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220308,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 317,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 318,
-                            amount = 0,
-                            current = 45,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 319,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 320,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220747,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 321,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220198,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 322,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220198,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 323,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 324,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220755,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 325,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220197,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 326,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220197,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 327,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 328,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220179,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 329,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 440488,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 330,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 440488,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 331,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 332,
-                            amount = 0,
-                            current = 130,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 333,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 334,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 335,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220762,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 336,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220762,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 337,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220759,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 338,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220759,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 339,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220346,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 340,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220346,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 341,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220342,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 342,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220342,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 343,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 344,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 345,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 346,
-                            amount = 0,
-                            current = 200,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 347,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 348,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 349,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220763,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 350,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220763,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 351,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220758,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 352,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220758,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 353,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220406,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 354,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220406,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 355,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 356,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 357,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 358,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220307,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 359,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 360,
-                            amount = 0,
-                            current = 260,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220340,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 361,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 362,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "TARCZA OSŁANIAJĄCA",
-                            number = 220637,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 363,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "OSŁONA",
-                            number = 220707,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 364,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "OSŁONA",
-                            number = 220707,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 365,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "NASADKA DYSZY",
-                            number = 220712,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 366,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "NASADKA DYSZY",
-                            number = 220712,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 367,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "DYSZA",
-                            number = 220708,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 368,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "DYSZA",
-                            number = 220708,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 369,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 370,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "PIERŚCIEŃ ZAWIR.",
-                            number = 220405,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 371,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "ELEKTRODA",
-                            number = 220709,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 372,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "ELEKTRODA",
-                            number = 220709,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 373,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = true,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 5
-                        },
-                        new
-                        {
-                            id = 374,
-                            amount = 0,
-                            current = 400,
-                            isOriginal = false,
-                            name = "RURKA WODNA",
-                            number = 220571,
-                            steelTypeId = 5
-                        });
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Order", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("createdDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("executedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("isDelivery")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("lastEditedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("orderingUserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("statusId")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("orderingUserId");
-
-                    b.HasIndex("statusId");
-
-                    b.ToTable("orders");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.OrderItem", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("amountDelta")
-                        .HasColumnType("int");
-
-                    b.Property<int>("itemId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("orderId")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("itemId");
-
-                    b.HasIndex("orderId");
-
-                    b.ToTable("orderItems");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Status", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("statuses");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            name = "zlecone"
-                        },
-                        new
-                        {
-                            id = 2,
-                            name = "zrealizowane"
-                        },
-                        new
-                        {
-                            id = 3,
-                            name = "anulowane"
-                        },
-                        new
-                        {
-                            id = 4,
-                            name = "wydane"
-                        });
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.SteelType", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("typeName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("steelTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            typeName = "Stal miękka"
-                        },
-                        new
-                        {
-                            id = 2,
-                            typeName = "Stal miękka - Bevel"
-                        },
-                        new
-                        {
-                            id = 3,
-                            typeName = "Stal nierdzewna"
-                        },
-                        new
-                        {
-                            id = 4,
-                            typeName = "Stal nierdzewna - Bevel"
-                        },
-                        new
-                        {
-                            id = 5,
-                            typeName = "Aluminium"
-                        });
-                });
-
-            modelBuilder.Entity("CentrostalAPI.Models.User", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("firstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("isAdmin")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("isBlocked")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("lastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("passwordSalt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("username")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("users");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Item", b =>
-                {
-                    b.HasOne("CentrostalAPI.DB.Models.SteelType", "steelType")
-                        .WithMany("items")
-                        .HasForeignKey("steelTypeId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("steelType");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Order", b =>
-                {
-                    b.HasOne("CentrostalAPI.Models.User", "orderingUser")
-                        .WithMany("orders")
-                        .HasForeignKey("orderingUserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("CentrostalAPI.DB.Models.Status", "status")
-                        .WithMany("orders")
-                        .HasForeignKey("statusId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("orderingUser");
-
-                    b.Navigation("status");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.OrderItem", b =>
-                {
-                    b.HasOne("CentrostalAPI.DB.Models.Item", "item")
-                        .WithMany("orderItems")
-                        .HasForeignKey("itemId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("CentrostalAPI.DB.Models.Order", "order")
-                        .WithMany("orderItems")
-                        .HasForeignKey("orderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("item");
-
-                    b.Navigation("order");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Item", b =>
-                {
-                    b.Navigation("orderItems");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Order", b =>
-                {
-                    b.Navigation("orderItems");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.Status", b =>
-                {
-                    b.Navigation("orders");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.DB.Models.SteelType", b =>
-                {
-                    b.Navigation("items");
-                });
-
-            modelBuilder.Entity("CentrostalAPI.Models.User", b =>
-                {
-                    b.Navigation("orders");
-                });
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Item", b => {
+                b.Property<int>("id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<int>("amount")
+                    .HasColumnType("int");
+
+                b.Property<int>("current")
+                    .HasColumnType("int");
+
+                b.Property<bool>("isOriginal")
+                    .HasColumnType("bit");
+
+                b.Property<string>("name")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<int>("number")
+                    .HasColumnType("int");
+
+                b.Property<int>("steelTypeId")
+                    .HasColumnType("int");
+
+                b.HasKey("id");
+
+                b.HasIndex("steelTypeId");
+
+                b.ToTable("items");
+
+                b.HasData(
+                    new {
+                        id = 1,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 2,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 3,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220194,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 4,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220194,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 5,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220754,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 6,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220754,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 7,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220193,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 8,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220193,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 9,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 10,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 11,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220192,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 12,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220192,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 13,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 14,
+                        amount = 0,
+                        current = 30,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 15,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 16,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 17,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220555,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 18,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220555,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 19,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220754,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 20,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220754,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 21,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220554,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 22,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220554,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 23,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220553,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 24,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220553,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 25,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220552,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 26,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220552,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 27,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 28,
+                        amount = 0,
+                        current = 50,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 29,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 30,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 31,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 32,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 33,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 34,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 35,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 36,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 37,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 38,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 39,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 40,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 41,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 42,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 43,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 44,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 45,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 46,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 47,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 48,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 49,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 50,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 51,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 52,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 53,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 54,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 55,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 56,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 57,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 58,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 59,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 60,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 61,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 62,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 63,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 64,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 65,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 66,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 67,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 68,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 69,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 70,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 71,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 72,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 73,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 74,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 75,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 76,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 77,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 78,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 79,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 80,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 81,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 82,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 83,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 84,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 85,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 86,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 87,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 88,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 89,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 90,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 91,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 92,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 93,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 94,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 95,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 96,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220189,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 97,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 98,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 99,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 100,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220188,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 101,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 102,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 103,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 104,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220187,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 105,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 106,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "ELEKTRODA SILVER",
+                        number = 220566,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 107,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 108,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 1
+                    },
+                    new {
+                        id = 109,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 110,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 111,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220742,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 112,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220742,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 113,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220845,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 114,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220845,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 115,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220806,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 116,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220806,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 117,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 118,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 119,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220802,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 120,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220802,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 121,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220700,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 122,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220700,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 123,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 124,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 125,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220742,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 126,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220742,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 127,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220740,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 128,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220740,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 129,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220646,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 130,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220646,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 131,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 132,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 133,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220649,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 134,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220649,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 135,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220700,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 136,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220700,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 137,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 138,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 139,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220658,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 140,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220658,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 141,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220845,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 142,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220845,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 143,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220659,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 144,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220659,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 145,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220353,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 146,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220353,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 147,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220662,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 148,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220662,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 149,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220700,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 150,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220700,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 151,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 152,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 153,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220741,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 154,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220741,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 155,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220740,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 156,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220740,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 157,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220542,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 158,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220542,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 159,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220436,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 160,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220436,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 161,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220541,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 162,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220541,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 163,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 164,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 2
+                    },
+                    new {
+                        id = 165,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 166,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 167,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220202,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 168,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220202,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 169,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 170,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 171,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220201,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 172,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220201,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 173,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 174,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 175,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220308,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 176,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220308,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 177,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 178,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 179,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 180,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 181,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220815,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 182,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220815,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 183,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220814,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 184,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220814,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 185,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220847,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 186,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220847,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 187,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 188,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 189,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220339,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 190,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220339,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 191,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 192,
+                        amount = 0,
+                        current = 60,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 193,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 194,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 195,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220338,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 196,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220338,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 197,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 198,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 199,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220337,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 200,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220337,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 201,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 202,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 203,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220339,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 204,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220339,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 205,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 206,
+                        amount = 0,
+                        current = 80,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 207,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 208,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 209,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220198,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 210,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220198,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 211,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 212,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 213,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220197,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 214,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220197,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 215,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 216,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 217,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 218,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 219,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 220,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 221,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 222,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 223,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220762,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 224,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220762,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 225,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220758,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 226,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220758,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 227,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220343,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 228,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220343,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 229,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220342,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 230,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220342,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 231,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 232,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 233,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 234,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 235,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 236,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 237,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220763,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 238,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220763,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 239,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220758,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 240,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220758,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 241,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220406,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 242,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220406,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 243,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 244,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 245,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 246,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 247,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 248,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 249,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 250,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 251,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220707,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 252,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220707,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 253,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220712,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 254,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220712,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 255,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220708,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 256,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220708,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 257,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 258,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 259,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220709,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 260,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220709,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 261,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 262,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 3
+                    },
+                    new {
+                        id = 263,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 264,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 265,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220738,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 266,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220738,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 267,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220739,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 268,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220739,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 269,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220656,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 270,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220656,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 271,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 272,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 273,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220606,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 274,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220606,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 275,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 276,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 277,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 278,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 279,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220738,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 280,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220738,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 281,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220739,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 282,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220739,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 283,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220607,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 284,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220607,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 285,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 286,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 287,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220606,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 288,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220606,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 289,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 290,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 291,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 292,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 293,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220707,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 294,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220707,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 295,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220712,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 296,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220712,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 297,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220708,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 298,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220708,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 299,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 300,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 301,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220709,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 302,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220709,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 303,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 304,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 4
+                    },
+                    new {
+                        id = 305,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 306,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 307,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220202,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 308,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220202,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 309,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 310,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220756,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 311,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220201,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 312,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220201,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 313,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 314,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220180,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 315,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220308,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 316,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220308,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 317,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 318,
+                        amount = 0,
+                        current = 45,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 319,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 320,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220747,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 321,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220198,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 322,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220198,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 323,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 324,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220755,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 325,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220197,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 326,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220197,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 327,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 328,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220179,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 329,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 440488,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 330,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 440488,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 331,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 332,
+                        amount = 0,
+                        current = 130,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 333,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 334,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 335,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220762,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 336,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220762,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 337,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220759,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 338,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220759,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 339,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220346,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 340,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220346,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 341,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220342,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 342,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220342,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 343,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 344,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 345,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 346,
+                        amount = 0,
+                        current = 200,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 347,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 348,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 349,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220763,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 350,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220763,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 351,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220758,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 352,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220758,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 353,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220406,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 354,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220406,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 355,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 356,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 357,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 358,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220307,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 359,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 360,
+                        amount = 0,
+                        current = 260,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220340,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 361,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 362,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "TARCZA OSŁANIAJĄCA",
+                        number = 220637,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 363,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "OSŁONA",
+                        number = 220707,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 364,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "OSŁONA",
+                        number = 220707,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 365,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "NASADKA DYSZY",
+                        number = 220712,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 366,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "NASADKA DYSZY",
+                        number = 220712,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 367,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "DYSZA",
+                        number = 220708,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 368,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "DYSZA",
+                        number = 220708,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 369,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 370,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "PIERŚCIEŃ ZAWIR.",
+                        number = 220405,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 371,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "ELEKTRODA",
+                        number = 220709,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 372,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "ELEKTRODA",
+                        number = 220709,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 373,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = true,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 5
+                    },
+                    new {
+                        id = 374,
+                        amount = 0,
+                        current = 400,
+                        isOriginal = false,
+                        name = "RURKA WODNA",
+                        number = 220571,
+                        steelTypeId = 5
+                    });
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Order", b => {
+                b.Property<int>("id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<DateTime>("createdDate")
+                    .HasColumnType("datetime2");
+
+                b.Property<DateTime?>("executedDate")
+                    .HasColumnType("datetime2");
+
+                b.Property<bool>("isDelivery")
+                    .HasColumnType("bit");
+
+                b.Property<DateTime?>("lastEditedDate")
+                    .HasColumnType("datetime2");
+
+                b.Property<int>("orderingUserId")
+                    .HasColumnType("int");
+
+                b.Property<int>("statusId")
+                    .HasColumnType("int");
+
+                b.HasKey("id");
+
+                b.HasIndex("orderingUserId");
+
+                b.HasIndex("statusId");
+
+                b.ToTable("orders");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.OrderItem", b => {
+                b.Property<int>("id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<int>("amountDelta")
+                    .HasColumnType("int");
+
+                b.Property<int>("itemId")
+                    .HasColumnType("int");
+
+                b.Property<int>("orderId")
+                    .HasColumnType("int");
+
+                b.HasKey("id");
+
+                b.HasIndex("itemId");
+
+                b.HasIndex("orderId");
+
+                b.ToTable("orderItems");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Status", b => {
+                b.Property<int>("id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<string>("name")
+                    .HasColumnType("nvarchar(max)");
+
+                b.HasKey("id");
+
+                b.ToTable("statuses");
+
+                b.HasData(
+                    new {
+                        id = 1,
+                        name = "zlecone"
+                    },
+                    new {
+                        id = 2,
+                        name = "zrealizowane"
+                    },
+                    new {
+                        id = 3,
+                        name = "anulowane"
+                    },
+                    new {
+                        id = 4,
+                        name = "wydane"
+                    });
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.SteelType", b => {
+                b.Property<int>("id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<string>("typeName")
+                    .HasColumnType("nvarchar(max)");
+
+                b.HasKey("id");
+
+                b.ToTable("steelTypes");
+
+                b.HasData(
+                    new {
+                        id = 1,
+                        typeName = "Stal miękka"
+                    },
+                    new {
+                        id = 2,
+                        typeName = "Stal miękka - Bevel"
+                    },
+                    new {
+                        id = 3,
+                        typeName = "Stal nierdzewna"
+                    },
+                    new {
+                        id = 4,
+                        typeName = "Stal nierdzewna - Bevel"
+                    },
+                    new {
+                        id = 5,
+                        typeName = "Aluminium"
+                    });
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.User", b => {
+                b.Property<int>("id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<string>("email")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("firstName")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<bool>("isAdmin")
+                    .HasColumnType("bit");
+
+                b.Property<bool>("isBlocked")
+                    .HasColumnType("bit");
+
+                b.Property<string>("lastName")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("password")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("passwordSalt")
+                    .HasColumnType("nvarchar(max)");
+
+                b.Property<string>("username")
+                    .HasColumnType("nvarchar(max)");
+
+                b.HasKey("id");
+
+                b.ToTable("users");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Item", b => {
+                b.HasOne("CentrostalAPI.DB.Models.SteelType", "steelType")
+                    .WithMany("items")
+                    .HasForeignKey("steelTypeId")
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .IsRequired();
+
+                b.Navigation("steelType");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Order", b => {
+                b.HasOne("CentrostalAPI.DB.Models.User", "orderingUser")
+                    .WithMany("orders")
+                    .HasForeignKey("orderingUserId")
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .IsRequired();
+
+                b.HasOne("CentrostalAPI.DB.Models.Status", "status")
+                    .WithMany("orders")
+                    .HasForeignKey("statusId")
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .IsRequired();
+
+                b.Navigation("orderingUser");
+
+                b.Navigation("status");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.OrderItem", b => {
+                b.HasOne("CentrostalAPI.DB.Models.Item", "item")
+                    .WithMany("orderItems")
+                    .HasForeignKey("itemId")
+                    .OnDelete(DeleteBehavior.Restrict)
+                    .IsRequired();
+
+                b.HasOne("CentrostalAPI.DB.Models.Order", "order")
+                    .WithMany("orderItems")
+                    .HasForeignKey("orderId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                b.Navigation("item");
+
+                b.Navigation("order");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Item", b => {
+                b.Navigation("orderItems");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Order", b => {
+                b.Navigation("orderItems");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.Status", b => {
+                b.Navigation("orders");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.SteelType", b => {
+                b.Navigation("items");
+            });
+
+            modelBuilder.Entity("CentrostalAPI.DB.Models.User", b => {
+                b.Navigation("orders");
+            });
 #pragma warning restore 612, 618
         }
     }

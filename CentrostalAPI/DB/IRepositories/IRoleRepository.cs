@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CentrostalAPI.DB.Models;
 
 namespace CentrostalAPI.DB.IRepositories {
-    public interface IUserRepository : IGenericRepository<User> {
+    public interface IRoleRepository : IGenericRepository<Role> {
 
     }
 }
