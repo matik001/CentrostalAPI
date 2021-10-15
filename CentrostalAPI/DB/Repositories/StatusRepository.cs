@@ -61,6 +61,7 @@ namespace CentrostalAPI.DB.Repositories {
                     canAdminChangeStatus = true,
                     canAdminEdit = true,
                     color = "#cc66ff",
+                    shouldShowPrice = true,
                     nextStatusMsg = "Przekaż do zatwierdzenia",
                     nextStatusId = 4
                 },
@@ -76,6 +77,7 @@ namespace CentrostalAPI.DB.Repositories {
                     canAdminCancel = true,
                     canAdminChangeStatus = false,
                     canAdminEdit = true,
+                    shouldShowPrice = true,
                     color = "#ff6600",
                     nextStatusMsg = "Zatwierdź",
                     nextStatusId = 5
@@ -92,6 +94,7 @@ namespace CentrostalAPI.DB.Repositories {
                     canAdminCancel = true,
                     canAdminChangeStatus = true,
                     canAdminEdit = true,
+                    shouldShowPrice = true,
                     color = "#33cc33",
                     nextStatusMsg = "Oznacz jako zamówione",
                     nextStatusId = 6
@@ -108,6 +111,7 @@ namespace CentrostalAPI.DB.Repositories {
                     canAdminCancel = true,
                     canAdminChangeStatus = true,
                     canAdminEdit = true,
+                    shouldShowPrice = true,
                     color = "#0066cc",
                     nextStatusMsg = "Przyjmuję towar",
                     nextStatusId = 7
@@ -124,6 +128,7 @@ namespace CentrostalAPI.DB.Repositories {
                     canAdminCancel = false,
                     canAdminChangeStatus = false,
                     canAdminEdit = false,
+                    shouldShowPrice = true,
                     color = "#009933",
                     shouldUpdateAmount = true
                 },

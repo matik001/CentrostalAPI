@@ -18,11 +18,13 @@ namespace CentrostalAPI.DTOs {
     public class OrderItemDTO {
         public int amountDelta { get; set; }
         public ItemDTO item { get; set; }
+        public decimal? priceOne { get; set; }
     }
 
     public class CreateOrderItemDTO {
         public int amountDelta { get; set; }
         public int itemId { get; set; }
+        public decimal? priceOne { get; set; }
     }
     public class CreateOrderDTO {
         public bool isSupply { get; set; }

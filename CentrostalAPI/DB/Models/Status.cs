@@ -26,5 +26,6 @@ namespace CentrostalAPI.DB.Models {
         public string nextStatusMsg { get; set; }
         public int? nextStatusId { get; set; }
         public bool shouldUpdateAmount { get; set; }
+        public bool shouldShowPrice { get; set; }
     }
 }

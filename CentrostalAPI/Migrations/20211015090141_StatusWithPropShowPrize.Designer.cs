@@ -4,14 +4,16 @@ using CentrostalAPI.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CentrostalAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211015090141_StatusWithPropShowPrize")]
+    partial class StatusWithPropShowPrize
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4310,7 +4312,7 @@ namespace CentrostalAPI.Migrations
                     b.Property<string>("nextStatusMsg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("shouldShowPrice")
+                    b.Property<bool>("shouldShowPrize")
                         .HasColumnType("bit");
 
                     b.Property<bool>("shouldUpdateAmount")
@@ -4337,7 +4339,7 @@ namespace CentrostalAPI.Migrations
                             name = "edytowalne",
                             nextStatusId = 2,
                             nextStatusMsg = "Przekaż dalej",
-                            shouldShowPrice = false,
+                            shouldShowPrize = false,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4356,7 +4358,7 @@ namespace CentrostalAPI.Migrations
                             name = "utworzone",
                             nextStatusId = 3,
                             nextStatusMsg = "Oznacz jako zapytane",
-                            shouldShowPrice = false,
+                            shouldShowPrize = false,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4375,7 +4377,7 @@ namespace CentrostalAPI.Migrations
                             name = "zapytane",
                             nextStatusId = 4,
                             nextStatusMsg = "Przekaż do zatwierdzenia",
-                            shouldShowPrice = true,
+                            shouldShowPrize = true,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4394,7 +4396,7 @@ namespace CentrostalAPI.Migrations
                             name = "niezatwierdzone",
                             nextStatusId = 5,
                             nextStatusMsg = "Zatwierdź",
-                            shouldShowPrice = true,
+                            shouldShowPrize = true,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4413,7 +4415,7 @@ namespace CentrostalAPI.Migrations
                             name = "zatwierdzone",
                             nextStatusId = 6,
                             nextStatusMsg = "Oznacz jako zamówione",
-                            shouldShowPrice = true,
+                            shouldShowPrize = false,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4432,7 +4434,7 @@ namespace CentrostalAPI.Migrations
                             name = "zamówione",
                             nextStatusId = 7,
                             nextStatusMsg = "Przyjmuję towar",
-                            shouldShowPrice = true,
+                            shouldShowPrize = false,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4449,7 +4451,7 @@ namespace CentrostalAPI.Migrations
                             canChairmanEdit = false,
                             color = "#009933",
                             name = "zrealizowane",
-                            shouldShowPrice = true,
+                            shouldShowPrize = true,
                             shouldUpdateAmount = true
                         },
                         new
@@ -4466,7 +4468,7 @@ namespace CentrostalAPI.Migrations
                             canChairmanEdit = false,
                             color = "#cc0000",
                             name = "anulowane",
-                            shouldShowPrice = false,
+                            shouldShowPrize = false,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4485,7 +4487,7 @@ namespace CentrostalAPI.Migrations
                             name = "edytowalne",
                             nextStatusId = 10,
                             nextStatusMsg = "Wydaj",
-                            shouldShowPrice = false,
+                            shouldShowPrize = false,
                             shouldUpdateAmount = false
                         },
                         new
@@ -4502,7 +4504,7 @@ namespace CentrostalAPI.Migrations
                             canChairmanEdit = false,
                             color = "#009933",
                             name = "wydane",
-                            shouldShowPrice = false,
+                            shouldShowPrize = false,
                             shouldUpdateAmount = true
                         });
                 });

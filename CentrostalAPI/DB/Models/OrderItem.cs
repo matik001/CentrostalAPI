@@ -13,7 +13,7 @@ namespace CentrostalAPI.DB.Models {
         public int amountDelta { get; set; }
         public int orderId { get; set; }
         public Order order { get; set; }
-        public decimal priceOne { get; set; }
+        public decimal? priceOne { get; set; }
 
     }
 }

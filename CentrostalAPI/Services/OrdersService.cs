@@ -42,7 +42,8 @@ namespace CentrostalAPI.IServices {
         public async Task update(User user, int id, UpdateOrderDTO dto) {
             var orderItems = dto.orderItems.Select(a => new OrderItem() {
                 amountDelta = a.amountDelta,
-                itemId = a.itemId
+                itemId = a.itemId,
+                priceOne = a.priceOne
             }).ToList();
             var order = await _unitOfWork.orders.getById(id, includes: new[] {
                 "orderItems",

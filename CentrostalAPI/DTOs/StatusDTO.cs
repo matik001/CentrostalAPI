@@ -22,5 +22,6 @@ namespace CentrostalAPI.DTOs {
 
         public string color { get; set; }
         public string nextStatusMsg { get; set; }
+        public bool shouldShowPrice { get; set; }
     }
 }
