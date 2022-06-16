@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CentrostalAPI.DB.Models;
 using CentrostalAPI.DB.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Protocols;
 
 namespace CentrostalAPI.DB {
     public class ApplicationDbContext : DbContext {
@@ -21,7 +22,7 @@ namespace CentrostalAPI.DB {
         public ApplicationDbContext(DbContextOptions options) : base(options) {
 
         }
-
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             var x = modelBuilder.Entity<Order>();
